@@ -1,8 +1,8 @@
-from project_config import *
-
 import socket
 import struct
 import time
+
+from utils.project_config import *
 
 # Create UDP socket once
 artnet_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

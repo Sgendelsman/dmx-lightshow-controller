@@ -11,7 +11,7 @@ SKIP_HOTKEY = 'shift+n'  # 🔄 Skip to next song
 
 ### ----------------------------- BEAT CONTROL -----------------------------
 
-DETECTED_BEATS_OUTPUT_DIR = "beat_cache"
+BEAT_DIRECTORY = "beat_cache"
 
 DMX_LATENCY = 0.015  # ~15 ms compensation for DMX/ArtNet delay
 

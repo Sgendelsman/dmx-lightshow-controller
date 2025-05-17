@@ -1,8 +1,8 @@
-from project_config import *
-
 import librosa
 import os
 import json
+
+from .utils.project_config import *
 
 os.makedirs(DETECTED_BEATS_OUTPUT_DIR, exist_ok=True)
 

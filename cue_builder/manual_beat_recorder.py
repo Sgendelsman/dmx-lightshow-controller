@@ -1,5 +1,3 @@
-from project_config import *
-
 import soundfile as sf
 import sounddevice as sd
 import time
@@ -7,6 +5,8 @@ import json
 import os
 import keyboard
 import sys
+
+from .utils.project_config import *
 
 AUDIO_FILE = sys.argv[1]
 os.makedirs(DETECTED_BEATS_OUTPUT_DIR, exist_ok=True)

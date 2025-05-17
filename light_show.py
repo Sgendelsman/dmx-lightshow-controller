@@ -1,17 +1,17 @@
-from project_config import *
-
 import time
 import json
 import os
 import sounddevice as sd
 import soundfile as sf
 from threading import Thread
-import artnet_utils
+
+from utils.project_config import *
+import utils.artnet_utils as artnet_utils
 
 def load_beat_file(song_path):
     base = os.path.basename(song_path)
-    manual_file = os.path.join(DETECTED_BEATS_OUTPUT_DIR, base + ".manualbeats.json")
-    auto_file = os.path.join(DETECTED_BEATS_OUTPUT_DIR, base + ".beats.json")
+    manual_file = os.path.join(BEAT_DIRECTORY, base + ".manualbeats.json")
+    auto_file = os.path.join(BEAT_DIRECTORY, base + ".beats.json")
 
     if os.path.exists(manual_file):
         print(f"📥 Using manual beats for '{base}'")
@@ -24,12 +24,30 @@ def load_beat_file(song_path):
     else:
         raise FileNotFoundError(f"No beat file found for: {base}")
 
-def generate_cues(beat_times):
+def load_cues(song_path):
+    base = os.path.basename(song_path)
+    cue_file = os.path.join(BEAT_DIRECTORY, base + ".cue.json")
+    manual_file = os.path.join(BEAT_DIRECTORY, base + ".manualbeats.json")
+    auto_file = os.path.join(BEAT_DIRECTORY, base + ".beats.json")
+
+    if os.path.exists(cue_file):
+        print(f"📥 Using cues from: {cue_file}")
+        with open(cue_file, "r") as f:
+            return json.load(f)
+    elif os.path.exists(manual_file):
+        print(f"⚠️ No .cue.json found, using manual beats: {manual_file}")
+        with open(manual_file, "r") as f:
+            beat_times = json.load(f)
+    elif os.path.exists(auto_file):
+        print(f"⚠️ No .cue.json found, using auto beats: {auto_file}")
+        with open(auto_file, "r") as f:
+            beat_times = json.load(f)
+    else:
+        raise FileNotFoundError("No cue or beat file found.")
+
+    # Fallback: alternate channel pattern
     return [
-        (t, {
-            1: 255 if i % 2 == 0 else 0,
-            2: 255 if i % 2 == 1 else 0
-        })
+        (t, {1: 255} if i % 2 == 0 else {2: 255})
         for i, t in enumerate(beat_times)
     ]
 
@@ -50,12 +68,12 @@ def fade_to_black(last_values):
 def run_show(song_list):
     for i, song_path in enumerate(song_list):
         print(f"\n🎵 Playing '{song_path}'")
-        beat_times = load_beat_file(song_path)
+        # beat_times = load_beat_file(song_path)
         
-        # Modify beat times here to sync up to the audio playback!
-        beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
+        # # Modify beat times here to sync up to the audio playback!
+        # beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
         
-        cues = generate_cues(beat_times)
+        cues = load_cues(song_path)
         
         # Start audio
         audio_done = []
