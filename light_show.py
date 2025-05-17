@@ -4,11 +4,13 @@ import os
 import sounddevice as sd
 import soundfile as sf
 from threading import Thread
+import pygame
+import sys
 
 from utils.project_config import *
 import utils.artnet_utils as artnet_utils
 
-def load_beat_file(song_path):
+def load_beat_times(song_path):
     base = os.path.basename(song_path)
     manual_file = os.path.join(BEAT_DIRECTORY, base + ".manualbeats.json")
     auto_file = os.path.join(BEAT_DIRECTORY, base + ".beats.json")
@@ -24,82 +26,128 @@ def load_beat_file(song_path):
     else:
         raise FileNotFoundError(f"No beat file found for: {base}")
 
-def load_cues(song_path):
+def load_patterns():
+    auto_file = os.path.join(BUILDER_DIRECTORY, "patterns.json")
+    with open(auto_file, "r") as f:
+        return json.load(f)
+
+def load_placements(song_path, patterns):
+    placements = []
     base = os.path.basename(song_path)
-    cue_file = os.path.join(BEAT_DIRECTORY, base + ".cue.json")
-    manual_file = os.path.join(BEAT_DIRECTORY, base + ".manualbeats.json")
-    auto_file = os.path.join(BEAT_DIRECTORY, base + ".beats.json")
+    manual_file = os.path.join(BEAT_DIRECTORY, base + ".placements.txt")
+    with open(manual_file, "r") as f:
+        last_index = 0
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
 
-    if os.path.exists(cue_file):
-        print(f"📥 Using cues from: {cue_file}")
-        with open(cue_file, "r") as f:
-            cues = json.load(f)
-            return cues
-    elif os.path.exists(manual_file):
-        print(f"⚠️ No .cue.json found, using manual beats: {manual_file}")
-        with open(manual_file, "r") as f:
-            beat_times = json.load(f)
-    elif os.path.exists(auto_file):
-        print(f"⚠️ No .cue.json found, using auto beats: {auto_file}")
-        with open(auto_file, "r") as f:
-            beat_times = json.load(f)
-    else:
-        raise FileNotFoundError("No cue or beat file found.")
+            if ":" in line:
+                index_str, pattern_key = line.split(":", 1)
+                last_index = int(index_str.strip()) - 1   # convert to 0-based index
+            else:
+                pattern_key = line.strip('"')
+            
+            pattern_key = pattern_key.strip().strip('"')
 
-    # Fallback: alternate channel pattern
-    return [
-        (t, {1: 255} if i % 2 == 0 else {2: 255})
-        for i, t in enumerate(beat_times)
-    ]
+            placements.append((last_index, pattern_key))
+            
+            for pattern in patterns.get(pattern_key, []):
+                if isinstance(pattern, dict) and 'fade' in pattern:
+                    last_index = last_index + pattern['fade']['beats']
+                else:
+                    last_index = last_index + 1
 
-def play_audio(file, done_flag):
-    data, fs = sf.read(file, dtype='float32')
-    sd.play(data, fs)
-    while sd.get_stream().active:
-        time.sleep(0.01)
-    done_flag.append(True)  # signal playback is done
+    return placements
 
-def fade_to_black(last_values):
-    print("🌒 Fading to black...")
-    for i in range(1, FADE_STEPS + 1):
-        fade = {ch: int(val * (1 - i / FADE_STEPS)) for ch, val in last_values.items()}
-        artnet_utils.send_dmx(UNIVERSE, fade)
-        time.sleep(FADE_DURATION / FADE_STEPS)
+def resolve_cues(beat_times, placements, patterns):
+    cues = []
 
-def run_show(song_list):
-    for i, song_path in enumerate(song_list):
-        print(f"\n🎵 Playing '{song_path}'")
-        # beat_times = load_beat_file(song_path)
-        
-        # # Modify beat times here to sync up to the audio playback!
-        # beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
-        
-        cues = load_cues(song_path)
-        
-        # Start audio
-        audio_done = []
-        audio_thread = Thread(target=play_audio, args=(song_path, audio_done), daemon=True)
-        audio_thread.start()
+    for index, pattern_key in placements:
+        if pattern_key not in patterns:
+            print(f"Warning: pattern '{pattern_key}' not found.")
+            continue
 
-        start_time = time.perf_counter()
-        cue_index = 0
-        last_values = {}
+        pattern = patterns[pattern_key]
+        for step_offset, step in enumerate(pattern):
+            step_index = index + step_offset
+            if step_index >= len(beat_times):
+                continue
 
-        # Run until audio finishes
-        while not audio_done:
-            now = time.perf_counter() - start_time
-            if cue_index < len(cues):
-                beat_index, cue_time, channel_values = cues[cue_index]
-                if now >= cue_time - DMX_LATENCY:
-                    artnet_utils.send_dmx(UNIVERSE, channel_values)
-                    last_values = channel_values
-                    cue_index += 1
-            time.sleep(0.001)
+            start_time = beat_times[step_index]
+            end_time = start_time  # default for static
 
-        # After audio finishes, fade out
-        fade_to_black(last_values)
+            if isinstance(step, dict) and "fade" in step:
+                fade = step["fade"]
+                beats = fade.get("beats", 1)
+                end_index = min(step_index + beats - 1, len(beat_times) - 1)
+                end_time = beat_times[end_index]
 
-    print("\n🏁 Show complete!")
+                from_vals = fade.get("from", {})
+                to_vals = fade.get("to", {})
+                cues.append((start_time, end_time, from_vals, to_vals))
+            elif isinstance(step, dict):
+                cues.append((start_time, start_time, step, step))
+            else:
+                print(f"Invalid pattern step: {step}")
+    return cues
+
+def play_audio(song_path):
+    pygame.mixer.init()
+    pygame.mixer.music.load(song_path)
+    pygame.mixer.music.play()
+
+def run_light_show(song_path):
+    beat_times = load_beat_times(song_path)
+    patterns = load_patterns()
+    placements = load_placements(song_path, patterns)
+    cues = resolve_cues(beat_times, placements, patterns)
+    play_audio(song_path)
+
+    start_time = time.time()
+    last_frame = {}
+
+    try:
+        last_played_cue = None
+        while True:
+            now = time.time() - start_time
+            frame = {}
+
+            # new_cues = [(start, end, from_vals, to_vals) for (start, end, from_vals, to_vals) in cues if end >= now]
+            for cue in cues:#new_cues:
+                (start, end, from_vals, to_vals) = cue
+                # These are in order, so if we find an element that has a greater start than current time, skip the rest of the cues.
+                if start > now:
+                    break
+                elif start <= now <= end:
+                    t = 0 if start == end else (now - start) / (end - start)
+                    for ch in set(from_vals.keys()) | set(to_vals.keys()):
+                        from_val = from_vals.get(ch, 0)
+                        to_val = to_vals.get(ch, 0)
+                        frame[ch] = int(from_val + (to_val - from_val) * t)
+
+                    if last_played_cue != cue:
+                        last_played_cue = cue
+                        print(f"[{start:.3f} -> {now:.3f} -> {end:.3f}] DMX -> {frame}")
+                    break
+
+            if frame != last_frame:
+                artnet_utils.send_dmx(frame)
+                last_frame = frame
+
+            if not pygame.mixer.music.get_busy():
+                # Song ended – fade to black
+                artnet_utils.send_dmx({ch: 0 for ch in last_frame})
+                break
+
+            time.sleep(1 / PACKETS_PER_SECOND)
+
+    except KeyboardInterrupt:
+        artnet_utils.send_dmx({ch: 0 for ch in last_frame})
+        print("Light show interrupted. All lights off.")
 
 if __name__ == "__main__":
-    run_show(SONG_LIST)
+    if len(sys.argv) < 2:
+        print("Usage: python light_show.py path/to/audio/file")
+    else:
+        run_light_show(sys.argv[1])
