@@ -39,7 +39,7 @@ if __name__ == "__main__":
             diff = beat - prev_beat
             
             new_beats_in_between = [prev_beat + (diff * j / multiplier) for j in range(1, multiplier)]
-                        
+ 
             new_beats.extend(new_beats_in_between)
             new_beats.append(beat)
 
