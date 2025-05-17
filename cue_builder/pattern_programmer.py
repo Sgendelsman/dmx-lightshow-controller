@@ -26,6 +26,14 @@ def load_patterns():
     with open(PATTERN_FILE, "r") as f:
         return json.load(f)
 
+def load_placements(audio_file):
+    base = os.path.basename(audio_file)
+    placements_path = os.path.join(BEAT_DIRECTORY, base + ".placements.json")
+    if not os.path.exists(placements_path):
+        raise FileNotFoundError(f"No placements file found: {placements_path}")
+    with open(placements_path, "r") as f:
+        return {int(k): v for k, v in json.load(f).items()}
+
 def apply_patterns(beat_times, patterns, placements):
     cues = []
     total_beats = len(beat_times)
@@ -52,13 +60,7 @@ def main():
 
     beat_times = load_beat_times(audio_file)
     patterns = load_patterns()
-
-    # === STEP: Define pattern placements ===
-    placements = {
-        1: "strobe3",
-        10: "rainbow7",
-        25: "strobe3"
-    }
+    placements = load_placements(audio_file)
 
     cues = apply_patterns(beat_times, patterns, placements)
 
