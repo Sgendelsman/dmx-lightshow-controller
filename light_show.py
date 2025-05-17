@@ -75,7 +75,8 @@ def resolve_cues(beat_times, placements, patterns):
                 continue
 
             start_time = beat_times[step_index]
-            end_time = start_time  # default for static
+            end_index = min(step_index + 1, len(beat_times) - 1)
+            end_time = beat_times[end_index]  # default for static
 
             if isinstance(step, dict) and "fade" in step:
                 fade = step["fade"]
@@ -85,9 +86,9 @@ def resolve_cues(beat_times, placements, patterns):
 
                 from_vals = fade.get("from", {})
                 to_vals = fade.get("to", {})
-                cues.append((start_time, end_time, from_vals, to_vals))
+                cues.append((start_time, end_time, from_vals, to_vals, pattern_key))
             elif isinstance(step, dict):
-                cues.append((start_time, start_time, step, step))
+                cues.append((start_time, end_time, step, step, pattern_key))
             else:
                 print(f"Invalid pattern step: {step}")
     return cues
@@ -113,9 +114,8 @@ def run_light_show(song_path):
             now = time.time() - start_time
             frame = {}
 
-            # new_cues = [(start, end, from_vals, to_vals) for (start, end, from_vals, to_vals) in cues if end >= now]
-            for cue in cues:#new_cues:
-                (start, end, from_vals, to_vals) = cue
+            for cue in cues:
+                (start, end, from_vals, to_vals, pattern_key) = cue
                 # These are in order, so if we find an element that has a greater start than current time, skip the rest of the cues.
                 if start > now:
                     break
@@ -128,7 +128,7 @@ def run_light_show(song_path):
 
                     if last_played_cue != cue:
                         last_played_cue = cue
-                        print(f"[{start:.3f} -> {now:.3f} -> {end:.3f}] DMX -> {frame}")
+                        print(f"[{start:.3f}s -> {end:.3f}s] DMX -> {pattern_key}")
                     break
 
             if frame != last_frame:
