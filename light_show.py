@@ -33,7 +33,8 @@ def load_cues(song_path):
     if os.path.exists(cue_file):
         print(f"📥 Using cues from: {cue_file}")
         with open(cue_file, "r") as f:
-            return json.load(f)
+            cues = json.load(f)
+            return cues
     elif os.path.exists(manual_file):
         print(f"⚠️ No .cue.json found, using manual beats: {manual_file}")
         with open(manual_file, "r") as f:

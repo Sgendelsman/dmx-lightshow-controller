@@ -10,6 +10,7 @@ def compile_template(template_path):
     output_path = template_path.replace(".cue_template.py", ".cue.json")
 
     cues = [(entry["time"], entry["channels"]) for entry in cue_data["cues"]]
+    print(cues)
     with open(output_path, "w") as f:
         json.dump(cues, f, indent=2)
 
