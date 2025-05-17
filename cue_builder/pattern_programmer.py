@@ -121,7 +121,7 @@ def apply_patterns(beat_times, patterns, placements):
 
     for i, t in enumerate(beat_times):
         cue = cue_map.get(i, {})  # fallback to blackout
-        cues.append((t, cue))
+        cues.append((i + 1, t, cue))
 
     return cues
 

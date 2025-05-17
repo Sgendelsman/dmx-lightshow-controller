@@ -31,6 +31,12 @@
    <Address>0</Address>
    <Channels>3</Channels>
   </Fixture>
+  <Monitor DisplayMode="1" ShowLabels="0">
+   <Font>Arial,12,-1,5,50,0,0,0,0,0</Font>
+   <ChannelStyle>0</ChannelStyle>
+   <ValueStyle>0</ValueStyle>
+   <Grid Width="5" Height="3" Depth="5" Units="0"/>
+  </Monitor>
  </Engine>
  <VirtualConsole>
   <Frame Caption="">

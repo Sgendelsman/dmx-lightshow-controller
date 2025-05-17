@@ -89,7 +89,7 @@ def run_show(song_list):
         while not audio_done:
             now = time.perf_counter() - start_time
             if cue_index < len(cues):
-                cue_time, channel_values = cues[cue_index]
+                beat_index, cue_time, channel_values = cues[cue_index]
                 if now >= cue_time - DMX_LATENCY:
                     artnet_utils.send_dmx(UNIVERSE, channel_values)
                     last_values = channel_values
