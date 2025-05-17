@@ -1,5 +1,3 @@
-from project_config import *
-
 import soundfile as sf
 import sounddevice as sd
 import time
@@ -8,8 +6,10 @@ import os
 import keyboard
 import sys
 
+from utils.project_config import *
+
 AUDIO_FILE = sys.argv[1]
-os.makedirs(DETECTED_BEATS_OUTPUT_DIR, exist_ok=True)
+os.makedirs(BEAT_DIRECTORY, exist_ok=True)
 
 # --- BEAT RECORDING ---
 def record_beats(audio_file):
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     beats = record_beats(AUDIO_FILE)
     if beats:
-        outfile = os.path.join(DETECTED_BEATS_OUTPUT_DIR, os.path.basename(AUDIO_FILE) + ".manualbeats.json")
+        outfile = os.path.join(BEAT_DIRECTORY, os.path.basename(AUDIO_FILE) + ".manualbeats.json")
         with open(outfile, "w") as f:
             json.dump(beats, f)
         print(f"\n✅ Saved {len(beats)} manual beats to '{outfile}'")

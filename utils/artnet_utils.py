@@ -1,8 +1,8 @@
-from project_config import *
-
 import socket
 import struct
 import time
+
+from utils.project_config import *
 
 # Create UDP socket once
 artnet_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -12,8 +12,9 @@ def send_dmx(universe, values: dict):
     print(f"[{time.perf_counter():.3f}] DMX -> {values}")
     dmx_data = [0] * 512
     for ch, val in values.items():
-        if 1 <= ch <= 512:
-            dmx_data[ch - 1] = val
+        int_ch = int(ch)
+        if 1 <= int_ch <= 512:
+            dmx_data[int_ch - 1] = val
 
     packet = build_artdmx_packet(universe, dmx_data)
     artnet_socket.sendto(packet, (ARTNET_IP, ARTNET_PORT))
