@@ -6,9 +6,7 @@ import os
 import sounddevice as sd
 import soundfile as sf
 from threading import Thread
-
-def send_dmx(universe, values: dict):
-    print(f"[{time.perf_counter():.3f}] DMX -> {values}")
+import artnet_utils
 
 def load_beat_file(song_path):
     base = os.path.basename(song_path)
@@ -46,15 +44,19 @@ def fade_to_black(last_values):
     print("🌒 Fading to black...")
     for i in range(1, FADE_STEPS + 1):
         fade = {ch: int(val * (1 - i / FADE_STEPS)) for ch, val in last_values.items()}
-        send_dmx(UNIVERSE, fade)
+        artnet_utils.send_dmx(UNIVERSE, fade)
         time.sleep(FADE_DURATION / FADE_STEPS)
 
 def run_show(song_list):
     for i, song_path in enumerate(song_list):
         print(f"\n🎵 Playing '{song_path}'")
         beat_times = load_beat_file(song_path)
+        
+        # Modify beat times here to sync up to the audio playback!
+        beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
+        
         cues = generate_cues(beat_times)
-
+        
         # Start audio
         audio_done = []
         audio_thread = Thread(target=play_audio, args=(song_path, audio_done), daemon=True)
@@ -70,7 +72,7 @@ def run_show(song_list):
             if cue_index < len(cues):
                 cue_time, channel_values = cues[cue_index]
                 if now >= cue_time - DMX_LATENCY:
-                    send_dmx(UNIVERSE, channel_values)
+                    artnet_utils.send_dmx(UNIVERSE, channel_values)
                     last_values = channel_values
                     cue_index += 1
             time.sleep(0.001)
