@@ -34,7 +34,7 @@ def load_patterns():
 def load_placements(song_path, patterns):
     placements = []
     base = os.path.basename(song_path)
-    manual_file = os.path.join(BEAT_DIRECTORY, base + ".placements.txt")
+    manual_file = os.path.join(BEAT_DIRECTORY, base + ".placements.md")
     with open(manual_file, "r") as f:
         last_index = 0
         for line in f:
@@ -53,12 +53,23 @@ def load_placements(song_path, patterns):
             placements.append((last_index, pattern_key))
             
             for pattern in patterns.get(pattern_key, []):
-                if isinstance(pattern, dict) and 'fade' in pattern:
-                    last_index = last_index + pattern['fade']['beats']
+                if isinstance(pattern, dict) and 'beats' in pattern:
+                    last_index = last_index + pattern['beats']
                 else:
                     last_index = last_index + 1
 
     return placements
+
+def beat_index_to_time(beat_times, fractional_index):
+    if fractional_index >= len(beat_times):
+        return fractional_index
+
+    lower = int(fractional_index)
+    upper = min(lower + 1, len(beat_times) - 1)
+    if lower == upper:
+        return beat_times[lower]
+    ratio = fractional_index - lower
+    return beat_times[lower] + (beat_times[upper] - beat_times[lower]) * ratio
 
 def resolve_cues(beat_times, placements, patterns):
     cues = []
@@ -69,28 +80,32 @@ def resolve_cues(beat_times, placements, patterns):
             continue
 
         pattern = patterns[pattern_key]
-        for step_offset, step in enumerate(pattern):
-            step_index = index + step_offset
-            if step_index >= len(beat_times):
-                continue
+        current_beat_offset = 0.0
 
-            start_time = beat_times[step_index]
-            end_index = min(step_index + 1, len(beat_times) - 1)
-            end_time = beat_times[end_index]  # default for static
+        for step in pattern:
+            duration_beats = step.get("beats", 1.0)
+            start_index = index + current_beat_offset
+            end_index = index + current_beat_offset + duration_beats
 
-            if isinstance(step, dict) and "fade" in step:
+            start_time = min(len(beat_times), beat_index_to_time(beat_times, start_index))
+            end_time = min(len(beat_times), beat_index_to_time(beat_times, end_index))
+
+            if start_time == len(beat_times):
+                break
+            
+            if "fade" in step:
                 fade = step["fade"]
-                beats = fade.get("beats", 1)
-                end_index = min(step_index + beats - 1, len(beat_times) - 1)
-                end_time = beat_times[end_index]
-
                 from_vals = fade.get("from", {})
                 to_vals = fade.get("to", {})
                 cues.append((start_time, end_time, from_vals, to_vals, pattern_key))
-            elif isinstance(step, dict):
-                cues.append((start_time, end_time, step, step, pattern_key))
+            elif "value" in step:
+                values = step["value"]
+                cues.append((start_time, end_time, values, values, pattern_key))
             else:
                 print(f"Invalid pattern step: {step}")
+
+            current_beat_offset += duration_beats
+
     return cues
 
 def play_audio(song_path):
@@ -100,13 +115,14 @@ def play_audio(song_path):
 
 def run_light_show(song_path):
     beat_times = load_beat_times(song_path)
-
+    
     # Adjust the beat times to account for some playback delays
     beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
 
     patterns = load_patterns()
     placements = load_placements(song_path, patterns)
     cues = resolve_cues(beat_times, placements, patterns)
+
     play_audio(song_path)
 
     start_time = time.time()
@@ -134,13 +150,12 @@ def run_light_show(song_path):
                         last_played_cue = cue
                         print(f"[{start:.3f}s -> {end:.3f}s] DMX -> {pattern_key}")
                     break
-
+                    
             if frame != last_frame:
                 artnet_utils.send_dmx(frame)
                 last_frame = frame
 
             if not pygame.mixer.music.get_busy():
-                # Song ended – fade to black
                 artnet_utils.send_dmx({ch: 0 for ch in last_frame})
                 break
 

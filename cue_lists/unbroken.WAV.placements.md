@@ -1,10 +1,11 @@
+# 5x8 bar fade
 fade_red_to_black
 fade_red_to_black
 fade_red_to_black
 fade_red_to_black
 fade_red_to_black
 
-# 1 bar flash
+# 3x8 bar buildup, 1x8 bar fade
 flash_red
 flash_red
 flash_red
@@ -14,7 +15,6 @@ flash_red
 flash_red
 flash_red
 
-# 1 bar flash
 flash_red
 flash_red
 flash_red
@@ -24,7 +24,6 @@ flash_red
 flash_red
 flash_red
 
-# 1 bar flash
 flash_red
 flash_red
 flash_red
@@ -36,7 +35,44 @@ flash_red
 
 fade_red_to_black
 
-# 1 bar flash red and white
+# 4x8 bar quick twice flash
+flash_red_quick_twice
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+
+flash_red_quick_twice
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+
+flash_red_quick_twice
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+
+flash_red_quick_twice
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+flash_red
+
+# 4x8 white and red flash
 flash_red_and_white
 flash_red_and_white
 flash_red_and_white
@@ -46,7 +82,6 @@ flash_red_and_white
 flash_red_and_white
 flash_red_and_white
 
-# 1 bar flash red and white
 flash_red_and_white
 flash_red_and_white
 flash_red_and_white
@@ -56,7 +91,6 @@ flash_red_and_white
 flash_red_and_white
 flash_red_and_white
 
-# 1 bar flash red and white
 flash_red_and_white
 flash_red_and_white
 flash_red_and_white
@@ -66,7 +100,6 @@ flash_red_and_white
 flash_red_and_white
 flash_red_and_white
 
-# 1 bar flash red and white
 flash_red_and_white
 flash_red_and_white
 flash_red_and_white
@@ -75,3 +108,5 @@ flash_red_and_white
 flash_red_and_white
 flash_red_and_white
 flash_red_and_white
+
+# A bunch of cool fading here. Fill this in
