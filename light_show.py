@@ -100,6 +100,10 @@ def play_audio(song_path):
 
 def run_light_show(song_path):
     beat_times = load_beat_times(song_path)
+
+    # Adjust the beat times to account for some playback delays
+    beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
+
     patterns = load_patterns()
     placements = load_placements(song_path, patterns)
     cues = resolve_cues(beat_times, placements, patterns)
