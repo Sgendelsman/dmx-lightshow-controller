@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="InputOutputManager">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FixtureManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.13.1</Version>
@@ -11,9 +11,6 @@
    <BeatGenerator BeatType="Disabled" BPM="0"/>
    <Universe Name="Universe 1" ID="0" Passthrough="True">
     <Input Plugin="ArtNet" UID="127.0.0.1" Line="1"/>
-    <Output Plugin="DMX USB" UID="FT232R USB UART (S/N: B003X4Y1)" Line="0">
-     <PluginParameters UniverseChannels="3"/>
-    </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1">
     <Input Plugin="ArtNet" UID="127.0.0.1" Line="1"/>
@@ -22,20 +19,31 @@
    <Universe Name="Universe 4" ID="3"/>
   </InputOutputMap>
   <Fixture>
-   <Manufacturer>Generic</Manufacturer>
-   <Model>Generic RGB</Model>
-   <Mode>RGB</Mode>
-   <ID>0</ID>
-   <Name>Generic RGB</Name>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>2</ID>
+   <Name>Par 36</Name>
    <Universe>0</Universe>
    <Address>0</Address>
-   <Channels>3</Channels>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>3</ID>
+   <Name>Par 36</Name>
+   <Universe>0</Universe>
+   <Address>7</Address>
+   <Channels>7</Channels>
   </Fixture>
   <Monitor DisplayMode="1" ShowLabels="0">
    <Font>Arial,12,-1,5,50,0,0,0,0,0</Font>
    <ChannelStyle>0</ChannelStyle>
    <ValueStyle>0</ValueStyle>
-   <Grid Width="5" Height="3" Depth="5" Units="0"/>
+   <Grid Width="1" Height="3" Depth="1" Units="0"/>
+   <FxItem ID="2" XPos="174.897" YPos="380.658"/>
   </Monitor>
  </Engine>
  <VirtualConsole>
