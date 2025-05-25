@@ -1,0 +1,92 @@
+{
+    "flash_red": [
+        { 
+            "value": "red", 
+            "beats": 0.2
+        },
+        { 
+            "value": "black", 
+            "beats": 0.8
+        }
+    ],
+    "flash_red_quick_twice": [
+        { 
+            "value": "red", 
+            "beats": 0.16
+        },
+        { 
+            "value": "black", 
+            "beats": 0.17
+        },
+        { 
+            "value": "red", 
+            "beats": 0.16
+        },
+        { 
+            "value": "black", 
+            "beats": 0.51
+        }
+    ],
+    "fade_red_to_black_4_beats": [
+        { 
+            "value": "red",
+            "beats": 1
+        },
+        { 
+            "fade": { "from": "red", "to": "black" }, 
+            "beats": 2
+        },
+        { 
+            "value": "black",
+            "beats": 1
+        }
+    ],
+    "fade_red_to_black_8_beats": [
+        { 
+            "value": "red",
+            "beats": 1
+        },
+        { 
+            "fade": { "from": "red", "to": "black" }, 
+            "beats": 2
+        },
+        { 
+            "value": "black",
+            "beats": 5
+        }
+    ],
+    "fade_in_fade_out_blue_4_beats": [
+        { 
+            "fade": { "from": "black", "to": "blue" }, 
+            "beats": 2
+        },
+        { 
+            "value": "blue",
+            "beats": 0.25
+        },
+        { 
+            "fade": { "from": "blue", "to": "black" }, 
+            "beats": 1.75
+        }
+    ],
+    "hold_then_fade_out_blue_4_beats": [
+        { 
+            "value": "blue",
+            "beats": 2.25
+        },
+        { 
+            "fade": { "from": "blue", "to": "black" }, 
+            "beats": 1.75
+        }
+    ],
+    "alternate_red_and_white_beats": [
+        { 
+            "value": "red_strobe", 
+            "beats": 1
+        },
+        { 
+            "value": "white_strobe", 
+            "beats": 1
+        }
+    ]
+}

@@ -44,6 +44,7 @@
    <ValueStyle>0</ValueStyle>
    <Grid Width="1" Height="3" Depth="1" Units="0"/>
    <FxItem ID="2" XPos="174.897" YPos="380.658"/>
+   <FxItem ID="3" XPos="631.687" YPos="376.543"/>
   </Monitor>
  </Engine>
  <VirtualConsole>
