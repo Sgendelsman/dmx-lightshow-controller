@@ -27,7 +27,12 @@ def load_beat_times(song_path):
         raise FileNotFoundError(f"No beat file found for: {base}")
 
 def load_patterns():
-    auto_file = os.path.join(BUILDER_DIRECTORY, "patterns.json")
+    auto_file = os.path.join(BEAT_DIRECTORY, "patterns.json")
+    with open(auto_file, "r") as f:
+        return json.load(f)
+
+def load_channel_configs():
+    auto_file = os.path.join(BEAT_DIRECTORY, "channel_configs.json")
     with open(auto_file, "r") as f:
         return json.load(f)
 
@@ -71,7 +76,7 @@ def beat_index_to_time(beat_times, fractional_index):
     ratio = fractional_index - lower
     return beat_times[lower] + (beat_times[upper] - beat_times[lower]) * ratio
 
-def resolve_cues(beat_times, placements, patterns):
+def resolve_cues(beat_times, placements, patterns, channel_configs):
     cues = []
 
     for index, pattern_key in placements:
@@ -95,11 +100,11 @@ def resolve_cues(beat_times, placements, patterns):
             
             if "fade" in step:
                 fade = step["fade"]
-                from_vals = fade.get("from", {})
-                to_vals = fade.get("to", {})
+                from_vals = channel_configs.get(fade['from'], {})
+                to_vals = channel_configs.get(fade['to'], {})
                 cues.append((start_time, end_time, from_vals, to_vals, pattern_key))
             elif "value" in step:
-                values = step["value"]
+                values = channel_configs.get(step["value"], {})
                 cues.append((start_time, end_time, values, values, pattern_key))
             else:
                 print(f"Invalid pattern step: {step}")
@@ -119,9 +124,10 @@ def run_light_show(song_path):
     # Adjust the beat times to account for some playback delays
     beat_times = [beat_time + BEAT_DELAY_ADJUSTMENT for beat_time in beat_times]
 
+    channel_configs = load_channel_configs()
     patterns = load_patterns()
     placements = load_placements(song_path, patterns)
-    cues = resolve_cues(beat_times, placements, patterns)
+    cues = resolve_cues(beat_times, placements, patterns, channel_configs)
 
     play_audio(song_path)
 
