@@ -26,11 +26,11 @@ def load_beat_times(song_path):
         raise FileNotFoundError(f"No beat file found for: {base}")
 
 def load_patterns():
-    with open(os.path.join(BEAT_DIRECTORY, "patterns.json"), "r") as f:
+    with open(os.path.join(BEAT_DIRECTORY, "helpers/patterns.json"), "r") as f:
         return json.load(f)
 
 def load_channel_configs():
-    with open(os.path.join(BEAT_DIRECTORY, "channel_configs.json"), "r") as f:
+    with open(os.path.join(BEAT_DIRECTORY, "helpers/channel_configs.json"), "r") as f:
         return json.load(f)
 
 def load_placements(song_path, patterns):
