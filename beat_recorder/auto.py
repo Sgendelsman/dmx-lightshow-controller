@@ -1,8 +1,9 @@
 import librosa
 import os
 import json
+import sys
 
-from .utils.project_config import *
+from utils.project_config import *
 
 os.makedirs(BEAT_DIRECTORY, exist_ok=True)
 
@@ -18,8 +19,8 @@ def save_beat_times(song_path):
     print(f"✅ Saved {len(beat_times)} beats for '{base}' to {beat_file}")
 
 if __name__ == "__main__":
-    for song in SONG_LIST:
-        if os.path.exists(song):
-            save_beat_times(song)
-        else:
-            print(f"⚠️ File not found: {song}")
+    song = sys.argv[1]
+    if os.path.exists(song):
+        save_beat_times(song)
+    else:
+        print(f"⚠️ File not found: {song}")

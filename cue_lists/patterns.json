@@ -34,11 +34,7 @@
         },
         { 
             "fade": { "from": "red", "to": "black" }, 
-            "beats": 2
-        },
-        { 
-            "value": "black",
-            "beats": 1
+            "beats": 3
         }
     ],
     "fade_red_to_black_8_beats": [
@@ -48,34 +44,34 @@
         },
         { 
             "fade": { "from": "red", "to": "black" }, 
-            "beats": 2
+            "beats": 3
         },
         { 
             "value": "black",
-            "beats": 5
+            "beats": 4
         }
     ],
-    "fade_in_fade_out_blue_4_beats": [
+    "fade_in_fade_out_red_4_beats": [
         { 
-            "fade": { "from": "black", "to": "blue" }, 
+            "fade": { "from": "black", "to": "red" }, 
             "beats": 2
         },
         { 
-            "value": "blue",
+            "value": "red",
             "beats": 0.25
         },
         { 
-            "fade": { "from": "blue", "to": "black" }, 
+            "fade": { "from": "red", "to": "black" }, 
             "beats": 1.75
         }
     ],
-    "hold_then_fade_out_blue_4_beats": [
+    "hold_then_fade_out_red_4_beats": [
         { 
-            "value": "blue",
+            "value": "red",
             "beats": 2.25
         },
         { 
-            "fade": { "from": "blue", "to": "black" }, 
+            "fade": { "from": "red", "to": "black" }, 
             "beats": 1.75
         }
     ],
