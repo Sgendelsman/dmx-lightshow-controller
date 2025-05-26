@@ -9,6 +9,8 @@ from threading import Thread, Event
 from utils.project_config import *
 import utils.artnet_utils as artnet_utils
 
+pygame.mixer.init(frequency=44100, size=-16, channels=2, buffer=2048)
+
 def load_beat_times(song_path):
     base = os.path.basename(song_path)
     manual_file = os.path.join(BEAT_DIRECTORY, base + ".manualbeats.json")
@@ -94,7 +96,6 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
     return cues
 
 def play_audio(song_path):
-    pygame.mixer.init()
     sound = pygame.mixer.Sound(song_path)
     sound.play()
     return sound

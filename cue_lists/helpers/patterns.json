@@ -2,11 +2,29 @@
     "flash_red": [
         { 
             "value": "red", 
-            "beats": 0.2
+            "beats": 0.5
         },
         { 
             "value": "black", 
-            "beats": 0.8
+            "beats": 0.5
+        }
+    ],
+    "flash_red_and_white_2_beats": [
+        { 
+            "value": "red", 
+            "beats": 0.5
+        },
+        { 
+            "value": "black", 
+            "beats": 0.5
+        },
+        { 
+            "value": "white", 
+            "beats": 0.5
+        },
+        { 
+            "value": "black", 
+            "beats": 0.5
         }
     ],
     "flash_red_quick_twice": [
@@ -75,14 +93,62 @@
             "beats": 1.75
         }
     ],
-    "alternate_red_and_white_beats": [
+    "alternate_red_and_white_2_beats": [
         { 
-            "value": "red_strobe_lvl_1", 
+            "value": "red", 
             "beats": 1
         },
         { 
-            "value": "white_strobe_lvl_1", 
+            "value": "white", 
             "beats": 1
+        }
+    ],
+    "alternate_red_and_white_strobe_2_beats": [
+        { 
+            "value": "red_strobe_lvl_2", 
+            "beats": 1
+        },
+        { 
+            "value": "white_strobe_lvl_2", 
+            "beats": 1
+        }
+    ],
+    "alternate_white_and_black_2_beats": [
+        { 
+            "value": "white", 
+            "beats": 1
+        },
+        { 
+            "value": "black", 
+            "beats": 1
+        }
+    ],
+    "alternate_white_and_black_1_beat": [
+        { 
+            "value": "white", 
+            "beats": 0.5
+        },
+        { 
+            "value": "black", 
+            "beats": 0.5
+        }
+    ],
+    "alternate_white_and_black_half_beats": [
+        { 
+            "value": "white", 
+            "beats": 0.25
+        },
+        { 
+            "value": "black", 
+            "beats": 0.25
+        },
+        { 
+            "value": "white", 
+            "beats": 0.25
+        },
+        { 
+            "value": "black", 
+            "beats": 0.25
         }
     ]
 }
