@@ -1,18 +1,8 @@
-
-### ----------------------------- SONGS/AUDIO -----------------------------
-MUSIC_DIRECTORY = "music"
-AUDIO_FILES = [
-    "unbroken.WAV",
-    "helena.WAV"
-]
-SONG_LIST = ["{0}/{1}".format(MUSIC_DIRECTORY, song) for song in AUDIO_FILES]
-
-SKIP_HOTKEY = 'shift+n'  # 🔄 Skip to next song
-
 ### ----------------------------- BEAT CONTROL -----------------------------
 
 PACKETS_PER_SECOND = 30
 
+MUSIC_DIRECTORY = "music"
 BEAT_DIRECTORY = "cue_lists"
 BUILDER_DIRECTORY = "beat_recorder"
 

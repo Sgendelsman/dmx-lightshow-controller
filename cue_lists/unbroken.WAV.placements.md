@@ -37,12 +37,9 @@ flash_red
 
 fade_red_to_black_8_beats
 
-# 4 bars of fun flash rhythm
+# 3.5 bars of fun flash rhythm
+# .5 bar of fading
 flash_red_quick_twice
-flash_red
-flash_red
-flash_red
-flash_red
 flash_red
 flash_red
 flash_red
@@ -51,7 +48,8 @@ flash_red_quick_twice
 flash_red
 flash_red
 flash_red
-flash_red
+
+flash_red_quick_twice
 flash_red
 flash_red
 flash_red
@@ -60,7 +58,13 @@ flash_red_quick_twice
 flash_red
 flash_red
 flash_red
+
+flash_red_quick_twice
 flash_red
+flash_red
+flash_red
+
+flash_red_quick_twice
 flash_red
 flash_red
 flash_red
@@ -94,25 +98,25 @@ alternate_red_and_white_beats
 alternate_red_and_white_beats
 
 # 12 bars of breathing blue fade
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
 
 # 8 bars of breathing blue fade
-hold_then_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-hold_then_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-hold_then_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
-hold_then_fade_out_blue_4_beats
-fade_in_fade_out_blue_4_beats
+hold_then_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+hold_then_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+hold_then_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+hold_then_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
