@@ -30,21 +30,21 @@
     "fade_red_to_black_4_beats": [
         { 
             "value": "red",
-            "beats": 1
+            "beats": 1.5
         },
         { 
             "fade": { "from": "red", "to": "black" }, 
-            "beats": 3
+            "beats": 2.5
         }
     ],
     "fade_red_to_black_8_beats": [
         { 
             "value": "red",
-            "beats": 1
+            "beats": 1.5
         },
         { 
             "fade": { "from": "red", "to": "black" }, 
-            "beats": 3
+            "beats": 2.5
         },
         { 
             "value": "black",
@@ -77,11 +77,11 @@
     ],
     "alternate_red_and_white_beats": [
         { 
-            "value": "red_strobe", 
+            "value": "red_strobe_lvl_1", 
             "beats": 1
         },
         { 
-            "value": "white_strobe", 
+            "value": "white_strobe_lvl_1", 
             "beats": 1
         }
     ]
