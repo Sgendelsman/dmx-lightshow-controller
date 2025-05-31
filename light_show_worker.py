@@ -2,7 +2,6 @@ import sys
 import time
 import json
 import os
-import pygame
 import soundfile as sf
 import subprocess
 
@@ -102,7 +101,7 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
 def play_audio(song_path, start_time=0.0):
     return subprocess.Popen([sys.executable, "audio_worker.py", song_path, str(start_time)])
 
-def main(song_path, song_duration, offset, seek):
+def main(song_path, song_duration, seek):
     beat_times = load_beat_times(song_path)
     beat_times = [bt + BEAT_DELAY_ADJUSTMENT - seek for bt in beat_times]
     channel_configs = load_channel_configs()
@@ -126,7 +125,7 @@ def main(song_path, song_duration, offset, seek):
                     break
                 elif start <= now <= end:
                     # Trim the end of any cues to the end of the song so fades work as expected
-                    end = min(end, song_duration - seek)
+                    # end = min(end, song_duration - seek)
                     t = (now - start) / (end - start) if start != end else 0
                     for ch in set(from_vals) | set(to_vals):
                         frame[ch] = min(255, int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t))
@@ -147,15 +146,15 @@ if __name__ == "__main__":
     try:
         path = sys.argv[1]
         song_duration = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0
-        offset = float(sys.argv[3]) if len(sys.argv) > 3 else 0.0
+        start_offset = float(sys.argv[3]) if len(sys.argv) > 3 else 0.0
         seek = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
         start_delay = float(sys.argv[5]) if len(sys.argv) > 5 else 0.0
 
-        time.sleep(start_delay)
+        time.sleep(start_delay - start_offset)
 
         log_str = f"🎵 Starting {path}"
-        if offset > 0.0:
-            log_str = log_str + f" {offset} seconds early"
+        if start_offset > 0.0:
+            log_str = log_str + f" {start_offset} seconds early"
         if seek > 0.0:
             seek_min = int(seek / 60)
             seek_sec = int(seek % 60)
@@ -163,6 +162,6 @@ if __name__ == "__main__":
         
         print(f"{log_str}...")
 
-        main(path, song_duration, offset, seek)
+        main(path, song_duration, seek)
     except KeyboardInterrupt:
         pass

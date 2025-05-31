@@ -1,11 +1,16 @@
 # BPM = 112, song is 4x4 rhythm
 
 # 5 bars of fade
-fade_red_to_black_8_beats
-fade_red_to_black_8_beats
-fade_red_to_black_8_beats
-fade_red_to_black_8_beats
-fade_red_to_black_8_beats
+fade_red_to_black_4_beats
+blackout_4_beats
+fade_red_to_black_4_beats
+blackout_4_beats
+fade_red_to_black_4_beats
+blackout_4_beats
+fade_red_to_black_4_beats
+blackout_4_beats
+fade_red_to_black_4_beats
+blackout_4_beats
 
 # 3 bars of buildup, 1 bar of fade
 flash_red
@@ -35,7 +40,8 @@ flash_red
 flash_red
 flash_red
 
-fade_red_to_black_8_beats
+fade_red_to_black_4_beats
+blackout_4_beats
 
 # 3.5 bars of fun flash rhythm
 # .5 bar of fading
@@ -77,25 +83,25 @@ flash_red
 fade_red_to_black_4_beats
 
 # 4 bars white and red alternate solid (no flash)
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
 
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
 
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
 
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
-alternate_red_and_white_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
+alternate_red_and_white_2_beats
 
 # 12 bars of breathing blue fade
 fade_in_fade_out_red_4_beats
@@ -121,50 +127,96 @@ fade_in_fade_out_red_4_beats
 hold_then_fade_out_red_4_beats
 fade_in_fade_out_red_4_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+# White beat buildup
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
+alternate_white_and_black_2_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+alternate_white_and_black_1_beat
+alternate_white_and_black_1_beat
+alternate_white_and_black_1_beat
+alternate_white_and_black_1_beat
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+alternate_white_and_black_half_beats
+alternate_white_and_black_half_beats
+alternate_white_and_black_half_beats
+alternate_white_and_black_half_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+# Flash red and white
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
 
-# 8 bars of breathing blue fade
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
-fade_in_fade_out_red_4_beats
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
+
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
+
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
+
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
+
+flash_red_and_white_2_beats
+flash_red_and_white_2_beats
+
+fade_red_to_black_4_beats
+
+# Strobe time
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+alternate_red_and_white_strobe_2_beats
+
+# Last fade
+fade_red_to_black_8_beats
