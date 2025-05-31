@@ -4,6 +4,7 @@ import json
 import os
 import pygame
 import soundfile as sf
+import subprocess
 
 from utils.project_config import *
 import utils.artnet_utils as artnet_utils
@@ -98,62 +99,70 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
             offset += duration
     return cues
 
-def play_audio(song_path):
-    pygame.mixer.init()
-    sound = pygame.mixer.Sound(song_path)
-    sound.play()
-    return sound
+def play_audio(song_path, start_time=0.0):
+    return subprocess.Popen([sys.executable, "audio_worker.py", song_path, str(start_time)])
 
-def main(song_path, offset):
+def main(song_path, song_duration, offset, seek):
     beat_times = load_beat_times(song_path)
-    beat_times = [bt + BEAT_DELAY_ADJUSTMENT for bt in beat_times]
+    beat_times = [bt + BEAT_DELAY_ADJUSTMENT - seek for bt in beat_times]
     channel_configs = load_channel_configs()
     patterns = load_patterns()
     placements = load_placements(song_path, patterns)
     cues = resolve_cues(beat_times, placements, patterns, channel_configs)
+    audio_proc = None
+    try:
+        audio_proc = play_audio(song_path, seek)
 
-    sound = play_audio(song_path)
-    start_time = time.time()
-    last_frame = {}
-    last_cue = None
-
-    while True:
-        now = time.time() - start_time
-        frame = {}
-        for cue in cues:
-            start, end, from_vals, to_vals, key = cue
-            if start > now:
-                break
-            elif start <= now <= end:
-                t = (now - start) / (end - start) if start != end else 0
-                for ch in set(from_vals) | set(to_vals):
-                    frame[ch] = int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t)
-                if last_cue != cue:
-                    print(f"[{start:.3f}s -> {end:.3f}s] DMX -> {key}")
-                    last_cue = cue
-                break
-        if frame != last_frame:
-            artnet_utils.send_dmx(frame)
-            last_frame = frame
-        if not sound.get_num_channels():
-            break
-        time.sleep(1 / PACKETS_PER_SECOND)
-
-    artnet_utils.send_dmx({ch: 0 for ch in last_frame})
+        start_time = time.time()
+        last_frame = {}
+        last_cue = None
+        now = 0
+        while audio_proc.poll() is None:
+            now = time.time() - start_time
+            frame = {}
+            for cue in cues:
+                start, end, from_vals, to_vals, key = cue
+                if start > now:
+                    break
+                elif start <= now <= end:
+                    # Trim the end of any cues to the end of the song so fades work as expected
+                    end = min(end, song_duration - seek)
+                    t = (now - start) / (end - start) if start != end else 0
+                    for ch in set(from_vals) | set(to_vals):
+                        frame[ch] = min(255, int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t))
+                    if last_cue != cue:
+                        print(f"[{(start + seek):.3f}s -> {(end + seek):.3f}s] DMX -> {key}")
+                        last_cue = cue
+                    break
+            if frame != last_frame:
+                artnet_utils.send_dmx(frame)
+                last_frame = frame
+            time.sleep(1 / PACKETS_PER_SECOND)
+        audio_proc.wait()
+    except KeyboardInterrupt:
+        audio_proc.terminate()
+        audio_proc.wait()
 
 if __name__ == "__main__":
     try:
         path = sys.argv[1]
-        offset = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0
-        start_delay = float(sys.argv[3]) if len(sys.argv) > 3 else 0.0
+        song_duration = float(sys.argv[2]) if len(sys.argv) > 2 else 0.0
+        offset = float(sys.argv[3]) if len(sys.argv) > 3 else 0.0
+        seek = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
+        start_delay = float(sys.argv[5]) if len(sys.argv) > 5 else 0.0
 
         time.sleep(start_delay)
 
+        log_str = f"🎵 Starting {path}"
         if offset > 0.0:
-            print(f"🎵 Starting {path} {offset} seconds early...")
-        else:
-            print(f"🎵 Starting {path}...")
+            log_str = log_str + f" {offset} seconds early"
+        if seek > 0.0:
+            seek_min = int(seek / 60)
+            seek_sec = int(seek % 60)
+            log_str = log_str + f" at {seek_min}:{seek_sec:02}"
         
-        main(path, offset)
+        print(f"{log_str}...")
+
+        main(path, song_duration, offset, seek)
     except KeyboardInterrupt:
         pass

@@ -120,3 +120,51 @@ hold_then_fade_out_red_4_beats
 fade_in_fade_out_red_4_beats
 hold_then_fade_out_red_4_beats
 fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+
+# 8 bars of breathing blue fade
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
+fade_in_fade_out_red_4_beats
