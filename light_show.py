@@ -43,8 +43,11 @@ def run_playlist(song_paths):
 
 if __name__ == "__main__":
     songs = [
-        {'song': f'{MUSIC_DIRECTORY}/unbroken.mp3', 'start_offset': 0.0, 'seek': 180.0},
-        {'song': f'{MUSIC_DIRECTORY}/kairo.mp3', 'start_offset': 6.995, 'seek': 0.0},
+        {'song': f'{MUSIC_DIRECTORY}/unbroken.mp3', 'start_offset': 0, 'seek': 180.0},
+        {'song': f'{MUSIC_DIRECTORY}/kairo.mp3', 'start_offset': 6.495},
+        {'song': f'{MUSIC_DIRECTORY}/doruksen_song1.mp3', 'start_offset': 0.774},
+        {'song': f'{MUSIC_DIRECTORY}/doruksen_song2_1.mp3', 'start_offset': 0.59},
+        {'song': f'{MUSIC_DIRECTORY}/doruksen_song2_2.mp3', 'start_offset': 1.636}
     ]
 
     run_playlist(songs)

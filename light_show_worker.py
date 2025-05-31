@@ -2,7 +2,6 @@ import sys
 import time
 import json
 import os
-import pygame
 import soundfile as sf
 import subprocess
 
@@ -126,7 +125,7 @@ def main(song_path, song_duration, offset, seek):
                     break
                 elif start <= now <= end:
                     # Trim the end of any cues to the end of the song so fades work as expected
-                    end = min(end, song_duration - seek)
+                    # end = min(end, song_duration - seek)
                     t = (now - start) / (end - start) if start != end else 0
                     for ch in set(from_vals) | set(to_vals):
                         frame[ch] = min(255, int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t))
