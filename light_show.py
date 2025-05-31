@@ -20,12 +20,12 @@ def run_light_show(song_path, song_duration, start_offset=0.0, seek=0.0, sleep_t
 def run_playlist(song_paths):
     subprocs = []
     try:
+        sleep_time = 0
         for i, song_path in enumerate(song_paths):
-            sleep_time = 0
             start_offset = 0
             if i > 0:
                 start_offset = song_path['start_offset']
-                sleep_time = max(0, prev_song_duration - prev_song_seek)
+                sleep_time = sleep_time + max(0, prev_song_duration - prev_song_seek - prev_start_offset)
 
             seek = 0 if not 'seek' in song_path else song_path['seek']
             song_duration = audio_utils.get_song_duration(song_path['song'])
@@ -33,6 +33,7 @@ def run_playlist(song_paths):
             
             prev_song_seek = seek
             prev_song_duration = song_duration
+            prev_start_offset = start_offset
         
         # Wait for all subprocesses to complete
         for proc in subprocs:
