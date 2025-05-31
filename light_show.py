@@ -26,8 +26,38 @@ def load_beat_times(song_path):
         raise FileNotFoundError(f"No beat file found for: {base}")
 
 def load_patterns():
+    def has_nested_patterns(patterns):
+        for pattern_key in patterns:
+            pattern_val_arr = patterns[pattern_key]
+            for val in pattern_val_arr:
+                if 'pattern' in val:
+                    return True
+        return False
+
+    def expand_patterns(patterns):
+        for pattern_key in patterns:
+            pattern_val_arr = patterns[pattern_key]
+            expanded_pattern_val_arr = []
+            for val in pattern_val_arr:
+                # If this is a nested pattern, look through patterns to see if it's in there already, 
+                # and expand it into the current pattern
+                if 'pattern' in val:
+                    nested_pattern_key = val['pattern']
+                    if nested_pattern_key in patterns:
+                        expanded_pattern_val_arr = expanded_pattern_val_arr + patterns[nested_pattern_key]
+                else:
+                    expanded_pattern_val_arr.append(val)
+            patterns[pattern_key] = expanded_pattern_val_arr
+        return patterns
+    
+    patterns = []
     with open(os.path.join(BEAT_DIRECTORY, "helpers/patterns.json"), "r") as f:
-        return json.load(f)
+        patterns = json.load(f)
+
+    while has_nested_patterns(patterns):
+        patterns = expand_patterns(patterns)
+
+    return patterns
 
 def load_channel_configs():
     with open(os.path.join(BEAT_DIRECTORY, "helpers/channel_configs.json"), "r") as f:
@@ -167,8 +197,7 @@ def run_playlist(song_paths):
 
 if __name__ == "__main__":
     songs = [
-        {'song': f'{MUSIC_DIRECTORY}/example.WAV', 'start_offset': 0},
-        {'song': f'{MUSIC_DIRECTORY}/unbroken.WAV', 'start_offset': 3.000}
+        {'song': f'{MUSIC_DIRECTORY}/unbroken.mp3', 'start_offset': 0},
     ]
 
     run_playlist(songs)

@@ -1,4 +1,10 @@
 {
+    "blackout_4_beats": [
+        {
+            "value": "black",
+            "beats": 4
+        }
+    ],
     "flash_red": [
         { 
             "value": "red", 
@@ -39,23 +45,20 @@
     ],
     "fade_red_to_black_8_beats": [
         { 
-            "value": "red",
-            "beats": 1
-        },
-        { 
-            "fade": { "from": "red", "to": "black" }, 
-            "beats": 3
+            "pattern": "fade_red_to_black_4_beats"
         },
         { 
             "value": "black",
             "beats": 4
         }
     ],
-    "fade_in_fade_out_red_4_beats": [
+    "fade_in_red_2_beats": [
         { 
             "fade": { "from": "black", "to": "red" }, 
             "beats": 2
-        },
+        }
+    ],
+    "fade_out_red_2_beats": [
         { 
             "value": "red",
             "beats": 0.25
@@ -65,14 +68,21 @@
             "beats": 1.75
         }
     ],
+    "fade_in_fade_out_red_4_beats": [
+        { 
+            "pattern": "fade_in_red_2_beats"
+        },
+        {
+            "pattern": "fade_out_red_2_beats"
+        }
+    ],
     "hold_then_fade_out_red_4_beats": [
         { 
             "value": "red",
-            "beats": 2.25
+            "beats": 2
         },
-        { 
-            "fade": { "from": "red", "to": "black" }, 
-            "beats": 1.75
+        {
+            "pattern": "fade_out_red_2_beats"
         }
     ],
     "alternate_red_and_white_beats": [
