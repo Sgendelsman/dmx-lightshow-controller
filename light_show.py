@@ -22,12 +22,14 @@ def run_playlist(song_paths):
     try:
         for i, song_path in enumerate(song_paths):
             sleep_time = 0
+            start_offset = 0
             if i > 0:
-                sleep_time = max(0, prev_song_duration - song_path['start_offset'] - prev_song_seek)
+                start_offset = song_path['start_offset']
+                sleep_time = max(0, prev_song_duration - prev_song_seek)
 
             seek = 0 if not 'seek' in song_path else song_path['seek']
             song_duration = audio_utils.get_song_duration(song_path['song'])
-            subprocs.append(run_light_show(song_path['song'], song_duration, song_path['start_offset'], seek, sleep_time))
+            subprocs.append(run_light_show(song_path['song'], song_duration, start_offset, seek, sleep_time))
             
             prev_song_seek = seek
             prev_song_duration = song_duration
