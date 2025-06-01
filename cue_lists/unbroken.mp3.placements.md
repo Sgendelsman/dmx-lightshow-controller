@@ -13,32 +13,32 @@ fade_red_to_black_4_beats
 blackout_4_beats
 
 # 3 bars of buildup, 1 bar of fade
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
 
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
 
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
-flash_red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
 
 fade_red_to_black_4_beats
 blackout_4_beats

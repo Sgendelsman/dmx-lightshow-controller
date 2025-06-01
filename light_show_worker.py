@@ -64,6 +64,8 @@ def load_placements(song_path, patterns):
                 pattern_key = line.strip('"')
             pattern_key = pattern_key.strip().strip('"')
             placements.append((last_index, pattern_key))
+            if ' ' in pattern_key:
+                pattern_key = pattern_key.split(' ')[0]
             for step in patterns.get(pattern_key, []):
                 last_index += step.get('beats', 1)
     return placements
@@ -78,12 +80,13 @@ def beat_index_to_time(beat_times, i):
 def resolve_cues(beat_times, placements, patterns, channel_configs):
     cues = []
     for index, key in placements:
-        # args = []
+        key = key.strip()
+        args = []
         # If there are args in the placement key, pass them to the pattern
-        # if ' ' in key:
-        #     args = key.split(' ')
-        #     key = args[0]
-        #     args = args[1:]
+        if ' ' in key:
+            args = key.split(' ')
+            key = args[0]
+            args = args[1:]
 
         pattern = patterns.get(key, [])
 
@@ -97,22 +100,24 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
             if start == len(beat_times):
                 break
             if 'fade' in step:
-                # for i in range(len(args)):
-                #     color_placeholder = f'color{i+1}'
-                #     if color_placeholder in step['fade']['from']:
-                #         step['fade']['from'] = step['fade']['from'].replace(color_placeholder, args[i])
-                #     if color_placeholder in step['fade']['to']:
-                #         step['fade']['to'] = step['fade']['to'].replace(color_placeholder, args[i])
                 f = step['fade']
-                from_vals = channel_configs.get(f['from'], {})
-                to_vals = channel_configs.get(f['to'], {})
+                from_val, to_val = f['from'], f['to']
+                for i in range(len(args)):
+                    color_placeholder = f'color{i+1}'
+                    if color_placeholder in from_val:
+                        from_val = from_val.replace(color_placeholder, args[i])
+                    if color_placeholder in to_val:
+                        to_val = to_val.replace(color_placeholder, args[i])
+                from_vals = channel_configs.get(from_val, {})
+                to_vals = channel_configs.get(to_val, {})
                 cues.append((start, end, from_vals, to_vals, key))
             elif 'value' in step:
-                # for i in range(len(args)):
-                #     color_placeholder = f'color{i+1}'
-                #     if color_placeholder in step['value']:
-                #         step['value'] = step['value'].replace(color_placeholder, args[i])
-                vals = channel_configs.get(step['value'], {})
+                val = step['value']
+                for i in range(len(args)):
+                    color_placeholder = f'color{i+1}'
+                    if color_placeholder in val:
+                        val = val.replace(color_placeholder, args[i])
+                vals = channel_configs.get(val, {})
                 cues.append((start, end, vals, vals, key))
             offset += duration
     return cues
