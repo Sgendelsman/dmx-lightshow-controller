@@ -24,7 +24,7 @@ def run_playlist(song_paths):
         for i, song_path in enumerate(song_paths):
             start_offset = 0
             if i > 0:
-                start_offset = song_path['start_offset']
+                start_offset = song_path['start_early']
                 sleep_time = sleep_time + max(0, prev_song_duration - prev_song_seek - prev_start_offset)
 
             seek = 0 if not 'seek' in song_path else song_path['seek']
@@ -39,7 +39,7 @@ def run_playlist(song_paths):
         for proc in subprocs:
             proc.wait()
     except KeyboardInterrupt:
-        print("🛑 Cancelled light show!")
+        print("🛑 CANCELLED LIGHT SHOW 🛑")
         for proc in subprocs:
             proc.terminate()
             proc.wait()
