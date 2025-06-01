@@ -30,6 +30,9 @@ flash_quick_twice:
     beats: 0.16
   - value: black
     beats: 0.51
+hold_1_beat:
+  - value: color1
+    beats: 1
 alternate_half_beats:
   - value: color1
     beats: 0.25
@@ -114,3 +117,25 @@ rainbow_fade_8_beats:
       from: color1
       to: black
     beats: 1
+rainbow_run_1_beat:
+  - value: color1
+    beats: 1
+rainbow_run_half_beats:
+  - value: color1
+    beats: 0.5
+  - value: color2
+    beats: 0.5
+rainbow_run_quarter_beats:
+  - value: color1
+    beats: 0.25
+  - value: color2
+    beats: 0.25
+  - value: color3
+    beats: 0.25
+  - value: color4
+    beats: 0.25
+pause_then_strobe:
+  - value: black
+    beats: 6.5
+  - value: color1
+    beats: 1.5
