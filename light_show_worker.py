@@ -125,9 +125,9 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
 def play_audio(song_path, start_time=0.0, begin_audio_time=0.0):
     return subprocess.Popen([sys.executable, 'audio_worker.py', song_path, str(start_time), str(begin_audio_time)])
 
-def main(song_path, song_duration, start_delay, start_offset, seek, start_time):
+def main(song_path, song_duration, start_delay, start_offset, seek, start_time, beat_delay):
     beat_times = load_beat_times(song_path)
-    beat_times = [bt + BEAT_DELAY_ADJUSTMENT - seek for bt in beat_times]
+    beat_times = [bt + beat_delay - seek for bt in beat_times]
     channel_configs = load_channel_configs()
     patterns = load_patterns()
     placements = load_placements(song_path, patterns)
@@ -189,7 +189,8 @@ if __name__ == '__main__':
         seek = float(sys.argv[4]) if len(sys.argv) > 4 else 0.0
         start_delay = float(sys.argv[5]) if len(sys.argv) > 5 else 0.0
         start_time = float(sys.argv[6]) if len(sys.argv) > 6 else 0.0
+        beat_delay = float(sys.argv[7]) if len(sys.argv) > 7 else 0.0
 
-        main(path, song_duration, start_delay, start_offset, seek, start_time)
+        main(path, song_duration, start_delay, start_offset, seek, start_time, beat_delay)
     except KeyboardInterrupt:
         pass

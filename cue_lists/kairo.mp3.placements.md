@@ -479,3 +479,8 @@ flash_1_beat red
 flash_1_beat red
 flash_1_beat red
 flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
