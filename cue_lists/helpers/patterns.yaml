@@ -2,118 +2,6 @@
 blackout_4_beats:
   - value: black
     beats: 4
-
-flash_red:
-  - value: red
-    beats: 0.5
-  - value: black
-    beats: 0.5
-
-flash_white:
-  - value: white
-    beats: 0.5
-  - value: black
-    beats: 0.5
-
-flash_red_and_white_2_beats:
-  - pattern: flash_red
-  - pattern: flash_white
-
-flash_red_quick_twice:
-  - value: red
-    beats: 0.16
-  - value: black
-    beats: 0.17
-  - value: red
-    beats: 0.16
-  - value: black
-    beats: 0.51
-
-fade_red_to_black_4_beats:
-  - value: red
-    beats: 1
-  - fade:
-      from: red
-      to: black
-    beats: 3
-
-fade_red_to_black_8_beats:
-  - value: red
-    beats: 1
-  - fade:
-      from: red
-      to: black
-    beats: 7
-
-fade_in_red_2_beats:
-  - fade:
-      from: black
-      to: red
-    beats: 2
-
-fade_out_red_2_beats:
-  - value: red
-    beats: 0.25
-  - fade:
-      from: red
-      to: black
-    beats: 1.75
-
-fade_in_fade_out_red_4_beats:
-  - pattern: fade_in_red_2_beats
-  - pattern: fade_out_red_2_beats
-
-hold_then_fade_out_red_4_beats:
-  - value: red
-    beats: 2
-  - pattern: fade_out_red_2_beats
-
-alternate_red_and_white_2_beats:
-  - value: red
-    beats: 1
-  - value: white
-    beats: 1
-
-alternate_red_and_white_strobe_2_beats:
-  - value: red_strobe
-    beats: 1
-  - value: white_strobe
-    beats: 1
-
-alternate_white_and_black_2_beats:
-  - value: white
-    beats: 1
-  - value: black
-    beats: 1
-
-alternate_white_and_black_1_beat:
-  - value: white
-    beats: 0.5
-  - value: black
-    beats: 0.5
-
-alternate_white_and_black_half_beats:
-  - value: white
-    beats: 0.25
-  - value: black
-    beats: 0.25
-  - value: white
-    beats: 0.25
-  - value: black
-    beats: 0.25
-
-alternate_red_and_black_half_beats:
-  - value: red
-    beats: 0.25
-  - value: black
-    beats: 0.25
-  - value: red
-    beats: 0.25
-  - value: black
-    beats: 0.25
-
-### ------------ GENERIC PATTERNS ------------
-
 flash_half_beats:
   - value: color1
     beats: 0.25
@@ -123,19 +11,16 @@ flash_half_beats:
     beats: 0.25
   - value: black
     beats: 0.25
-
 flash_1_beat:
   - value: color1
     beats: 0.5
   - value: black
-    beats: 0.5
-    
+    beats: 0.5  
 flash_2_beats:
   - value: color1
     beats: 1
   - value: black
-    beats: 1
-    
+    beats: 1   
 flash_quick_twice:
   - value: color1
     beats: 0.16
@@ -145,7 +30,6 @@ flash_quick_twice:
     beats: 0.16
   - value: black
     beats: 0.51
-
 alternate_half_beats:
   - value: color1
     beats: 0.25
@@ -155,19 +39,16 @@ alternate_half_beats:
     beats: 0.25
   - value: color2
     beats: 0.25
-
 alternate_1_beat:
   - value: color1
     beats: 0.5
   - value: color2
     beats: 0.5
-
 alternate_2_beats:
   - value: color1
     beats: 1
   - value: color2
     beats: 1
-
 fade_to_black_4_beats:
   - value: color1
     beats: 1
@@ -175,7 +56,6 @@ fade_to_black_4_beats:
       from: color1
       to: black
     beats: 3
-
 fade_to_black_8_beats:
   - value: color1
     beats: 1
@@ -184,6 +64,43 @@ fade_to_black_8_beats:
       to: black
     beats: 7
 
+
+### ------------ UNBROKEN ------------
+flash_red:
+  - value: red
+    beats: 0.5
+  - value: black
+    beats: 0.5
+flash_white:
+  - value: white
+    beats: 0.5
+  - value: black
+    beats: 0.5
+flash_red_and_white_2_beats:
+  - pattern: flash_red
+  - pattern: flash_white
+fade_in_red_2_beats:
+  - fade:
+      from: black
+      to: red
+    beats: 2
+fade_out_red_2_beats:
+  - value: red
+    beats: 0.25
+  - fade:
+      from: red
+      to: black
+    beats: 1.75
+fade_in_fade_out_red_4_beats:
+  - pattern: fade_in_red_2_beats
+  - pattern: fade_out_red_2_beats
+hold_then_fade_out_red_4_beats:
+  - value: red
+    beats: 2
+  - pattern: fade_out_red_2_beats
+
+
+### ------------ KAIRO ------------
 rainbow_fade_8_beats:
   - value: color1
     beats: 1
