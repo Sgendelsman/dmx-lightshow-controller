@@ -1,0 +1,116 @@
+### ------------ GENERAL HELPFUL PATTERNS ------------
+blackout_4_beats:
+  - value: black
+    beats: 4
+flash_half_beats:
+  - value: color1
+    beats: 0.25
+  - value: black
+    beats: 0.25
+  - value: color1
+    beats: 0.25
+  - value: black
+    beats: 0.25
+flash_1_beat:
+  - value: color1
+    beats: 0.5
+  - value: black
+    beats: 0.5  
+flash_2_beats:
+  - value: color1
+    beats: 1
+  - value: black
+    beats: 1   
+flash_quick_twice:
+  - value: color1
+    beats: 0.16
+  - value: black
+    beats: 0.17
+  - value: color1
+    beats: 0.16
+  - value: black
+    beats: 0.51
+alternate_half_beats:
+  - value: color1
+    beats: 0.25
+  - value: color2
+    beats: 0.25
+  - value: color1
+    beats: 0.25
+  - value: color2
+    beats: 0.25
+alternate_1_beat:
+  - value: color1
+    beats: 0.5
+  - value: color2
+    beats: 0.5
+alternate_2_beats:
+  - value: color1
+    beats: 1
+  - value: color2
+    beats: 1
+fade_to_black_4_beats:
+  - value: color1
+    beats: 1
+  - fade:
+      from: color1
+      to: black
+    beats: 3
+fade_to_black_8_beats:
+  - value: color1
+    beats: 1
+  - fade:
+      from: color1
+      to: black
+    beats: 7
+
+
+### ------------ UNBROKEN ------------
+flash_red:
+  - value: red
+    beats: 0.5
+  - value: black
+    beats: 0.5
+flash_white:
+  - value: white
+    beats: 0.5
+  - value: black
+    beats: 0.5
+flash_red_and_white_2_beats:
+  - pattern: flash_red
+  - pattern: flash_white
+fade_in_red_2_beats:
+  - fade:
+      from: black
+      to: red
+    beats: 2
+fade_out_red_2_beats:
+  - value: red
+    beats: 0.25
+  - fade:
+      from: red
+      to: black
+    beats: 1.75
+fade_in_fade_out_red_4_beats:
+  - pattern: fade_in_red_2_beats
+  - pattern: fade_out_red_2_beats
+hold_then_fade_out_red_4_beats:
+  - value: red
+    beats: 2
+  - pattern: fade_out_red_2_beats
+
+
+### ------------ KAIRO ------------
+rainbow_fade_8_beats:
+  - value: color1
+    beats: 1
+  - fade:
+      from: color1
+      to: black
+    beats: 5
+  - value: color1
+    beats: 1
+  - fade:
+      from: color1
+      to: black
+    beats: 1
