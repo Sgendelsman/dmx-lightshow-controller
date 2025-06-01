@@ -24,7 +24,7 @@ def run_playlist(song_paths):
         for i, song_path in enumerate(song_paths):
             start_offset = 0
             if i > 0:
-                start_offset = song_path['start_offset']
+                start_offset = song_path['start_early']
                 sleep_time = sleep_time + max(0, prev_song_duration - prev_song_seek - prev_start_offset)
 
             seek = 0 if not 'seek' in song_path else song_path['seek']
@@ -39,18 +39,10 @@ def run_playlist(song_paths):
         for proc in subprocs:
             proc.wait()
     except KeyboardInterrupt:
-        print("🛑 Cancelled light show!")
+        print("🛑 CANCELLED LIGHT SHOW 🛑")
         for proc in subprocs:
             proc.terminate()
             proc.wait()
 
 if __name__ == "__main__":
-    songs = [
-        {'song': f'{MUSIC_DIRECTORY}/unbroken.mp3', 'start_offset': 0, 'seek': 180.0},
-        {'song': f'{MUSIC_DIRECTORY}/kairo.mp3', 'start_offset': 6.495},
-        {'song': f'{MUSIC_DIRECTORY}/doruksen_song1.mp3', 'start_offset': 0.774},
-        {'song': f'{MUSIC_DIRECTORY}/doruksen_song2_1.mp3', 'start_offset': 0.59},
-        {'song': f'{MUSIC_DIRECTORY}/doruksen_song2_2.mp3', 'start_offset': 1.636}
-    ]
-
-    run_playlist(songs)
+    run_playlist(SONGS)

@@ -161,5 +161,41 @@
             "value": "black", 
             "beats": 0.25
         }
+    ],
+    "alternate_red_and_black_half_beats": [
+        { 
+            "value": "red", 
+            "beats": 0.25
+        },
+        { 
+            "value": "black", 
+            "beats": 0.25
+        },
+        { 
+            "value": "red", 
+            "beats": 0.25
+        },
+        { 
+            "value": "black", 
+            "beats": 0.25
+        }
+    ],
+    "rainbow_fade_red_8_beats": [
+        { 
+            "value": "red", 
+            "beats": 1
+        },
+        { 
+            "fade": { "from": "red", "to": "black" }, 
+            "beats": 5
+        },
+        { 
+            "value": "red", 
+            "beats": 1
+        },
+        { 
+            "fade": { "from": "red", "to": "black" }, 
+            "beats": 1
+        }
     ]
 }

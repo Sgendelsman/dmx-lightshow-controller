@@ -130,7 +130,7 @@ def main(song_path, song_duration, seek):
                     for ch in set(from_vals) | set(to_vals):
                         frame[ch] = min(255, int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t))
                     if last_cue != cue:
-                        print(f"[{(start + seek):.3f}s -> {(end + seek):.3f}s] DMX -> {key}")
+                        print(f"[{(now + seek):.3f}s/{song_duration:.3f}s] DMX -> {key}")
                         last_cue = cue
                     break
             if frame != last_frame:
