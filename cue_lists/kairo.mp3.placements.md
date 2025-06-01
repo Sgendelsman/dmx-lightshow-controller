@@ -119,5 +119,368 @@ flash_half_beats red
 
 # Rainbow runs
 rainbow_fade_8_beats red
-rainbow_fade_8_beats blue
-rainbow_fade_8_beats white
+rainbow_fade_8_beats cyan
+rainbow_fade_8_beats green
+rainbow_fade_8_beats magenta
+rainbow_fade_8_beats dark_blue
+rainbow_fade_8_beats yellow
+rainbow_fade_8_beats purplish_red
+rainbow_fade_8_beats purple
+
+# Rainbow run (individual heads)
+rainbow_run_1_beat cyan_1
+rainbow_run_1_beat cyan_2
+rainbow_run_1_beat dark_blue_1
+rainbow_run_1_beat dark_blue_2
+
+rainbow_run_1_beat green_1
+rainbow_run_1_beat green_2
+rainbow_run_1_beat magenta_1
+rainbow_run_1_beat magenta_2
+
+rainbow_run_1_beat orange_1
+rainbow_run_1_beat orange_2
+rainbow_run_1_beat purple_1
+rainbow_run_1_beat purple_2
+
+rainbow_run_1_beat purplish_red_1
+rainbow_run_1_beat purplish_red_2
+rainbow_run_1_beat red_1
+rainbow_run_1_beat red_2
+
+rainbow_run_half_beats sky_blue_1 sky_blue_2
+rainbow_run_half_beats white_1 white_2
+rainbow_run_half_beats yellow_1 yellow_2
+rainbow_run_half_beats cyan_1 cyan_2
+
+rainbow_run_half_beats dark_blue_1 dark_blue_2
+rainbow_run_half_beats green_1 green_2
+rainbow_run_half_beats magenta_1 magenta_2
+rainbow_run_half_beats orange_1 orange_2
+
+rainbow_run_quarter_beats purple_1 purple_2 purplish_red_1 purplish_red_2
+rainbow_run_quarter_beats red_1 red_2 sky_blue_1 sky_blue_2
+rainbow_run_quarter_beats white_1 white_2 yellow_1 yellow_2
+rainbow_run_quarter_beats cyan_1 cyan_2 dark_blue_1 dark_blue_2
+
+rainbow_run_quarter_beats green_1 green_2 magenta_1 magenta_2
+rainbow_run_quarter_beats orange_1 orange_2 purple_1 purple_2
+rainbow_run_quarter_beats purplish_red_1 purplish_red_2 red_1 red_2
+rainbow_run_quarter_beats sky_blue_1 sky_blue_2 white_1 white_2
+
+pause_then_strobe white_strobe
+
+# Flash Rainbow
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+flash_1_beat orange
+flash_1_beat green
+flash_1_beat magenta
+flash_1_beat dark_blue
+
+flash_1_beat yellow
+flash_1_beat sky_blue
+flash_1_beat purplish_red
+flash_1_beat purple
+
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+# Rainbows (strobe)
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+
+# Flash Rainbow
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+flash_1_beat orange
+flash_1_beat green
+flash_1_beat magenta
+flash_1_beat dark_blue
+
+flash_1_beat yellow
+flash_1_beat sky_blue
+flash_1_beat purplish_red
+flash_1_beat purple
+
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+# Rainbow runs
+rainbow_fade_8_beats red
+rainbow_fade_8_beats cyan
+rainbow_fade_8_beats green
+rainbow_fade_8_beats magenta
+rainbow_fade_8_beats dark_blue
+rainbow_fade_8_beats yellow
+rainbow_fade_8_beats purplish_red
+rainbow_fade_8_beats purple
+rainbow_fade_8_beats sky_blue
+rainbow_fade_8_beats orange
+rainbow_fade_8_beats green
+rainbow_fade_8_beats magenta
+
+# Rainbow run (individual heads)
+rainbow_run_1_beat cyan_1
+rainbow_run_1_beat cyan_2
+rainbow_run_1_beat dark_blue_1
+rainbow_run_1_beat dark_blue_2
+
+rainbow_run_1_beat green_1
+rainbow_run_1_beat green_2
+rainbow_run_1_beat magenta_1
+rainbow_run_1_beat magenta_2
+
+rainbow_run_1_beat orange_1
+rainbow_run_1_beat orange_2
+rainbow_run_1_beat purple_1
+rainbow_run_1_beat purple_2
+
+rainbow_run_1_beat purplish_red_1
+rainbow_run_1_beat purplish_red_2
+rainbow_run_1_beat red_1
+rainbow_run_1_beat red_2
+
+rainbow_run_half_beats sky_blue_1 sky_blue_2
+rainbow_run_half_beats white_1 white_2
+rainbow_run_half_beats yellow_1 yellow_2
+rainbow_run_half_beats cyan_1 cyan_2
+
+rainbow_run_half_beats dark_blue_1 dark_blue_2
+rainbow_run_half_beats green_1 green_2
+rainbow_run_half_beats magenta_1 magenta_2
+rainbow_run_half_beats orange_1 orange_2
+
+rainbow_run_quarter_beats purple_1 purple_2 purplish_red_1 purplish_red_2
+rainbow_run_quarter_beats red_1 red_2 sky_blue_1 sky_blue_2
+rainbow_run_quarter_beats white_1 white_2 yellow_1 yellow_2
+rainbow_run_quarter_beats cyan_1 cyan_2 dark_blue_1 dark_blue_2
+
+rainbow_run_quarter_beats green_1 green_2 magenta_1 magenta_2
+rainbow_run_quarter_beats orange_1 orange_2 purple_1 purple_2
+rainbow_run_quarter_beats purplish_red_1 purplish_red_2 red_1 red_2
+rainbow_run_quarter_beats sky_blue_1 sky_blue_2 white_1 white_2
+
+pause_then_strobe white_strobe
+
+# Flash Rainbow
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+flash_1_beat orange
+flash_1_beat green
+flash_1_beat magenta
+flash_1_beat dark_blue
+
+flash_1_beat yellow
+flash_1_beat sky_blue
+flash_1_beat purplish_red
+flash_1_beat purple
+
+flash_1_beat red
+flash_1_beat cyan
+flash_1_beat orange
+flash_1_beat green
+
+flash_1_beat magenta
+flash_1_beat dark_blue
+flash_1_beat yellow
+flash_1_beat sky_blue
+
+flash_1_beat purplish_red
+flash_1_beat purple
+flash_1_beat red
+flash_1_beat cyan
+
+# Rainbows (strobe)
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+rainbow_run_1_beat orange_strobe
+rainbow_run_1_beat green_strobe
+
+rainbow_run_1_beat magenta_strobe
+rainbow_run_1_beat dark_blue_strobe
+rainbow_run_1_beat yellow_strobe
+rainbow_run_1_beat sky_blue_strobe
+
+rainbow_run_1_beat purplish_red_strobe
+rainbow_run_1_beat purple_strobe
+rainbow_run_1_beat red_strobe
+rainbow_run_1_beat cyan_strobe
+
+# Singing part
+singing_part green
+singing_part cyan
+singing_part purple
+singing_part dark_blue
+
+# Fading (just red)
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+
+# Flash red (7 bars)
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red

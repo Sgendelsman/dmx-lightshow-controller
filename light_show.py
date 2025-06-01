@@ -6,7 +6,7 @@ import time
 from utils.project_config import *
 import utils.audio_utils as audio_utils
 
-def run_light_show(song_path, song_duration, start_offset=0.0, seek=0.0, sleep_time=0.0, start_time=0.0):
+def run_light_show(song_path, song_duration, start_offset=0.0, seek=0.0, sleep_time=0.0, start_time=0.0, beat_delay=0.0):
     return subprocess.Popen([
         sys.executable, 
         "light_show_worker.py", 
@@ -15,7 +15,8 @@ def run_light_show(song_path, song_duration, start_offset=0.0, seek=0.0, sleep_t
         str(start_offset), 
         str(seek), 
         str(sleep_time),
-        str(start_time)
+        str(start_time),
+        str(beat_delay)
     ])
 
 def run_playlist(song_paths):
@@ -34,7 +35,8 @@ def run_playlist(song_paths):
 
             seek = 0 if not 'seek' in song_path else song_path['seek']
             song_duration = audio_utils.get_song_duration(song_path['song'])
-            subprocs.append(run_light_show(song_path['song'], song_duration, start_offset, seek, sleep_time, start_time))
+            beat_delay = 0 if not 'beat_delay' in song_path else song_path['beat_delay']
+            subprocs.append(run_light_show(song_path['song'], song_duration, start_offset, seek, sleep_time, start_time, beat_delay))
             
             prev_song_seek = seek
             prev_song_duration = song_duration
