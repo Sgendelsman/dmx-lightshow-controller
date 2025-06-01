@@ -432,3 +432,50 @@ rainbow_run_1_beat purple_strobe
 rainbow_run_1_beat red_strobe
 rainbow_run_1_beat cyan_strobe
 
+# Singing part
+singing_part green
+singing_part cyan
+singing_part purple
+singing_part dark_blue
+
+# Fading (just red)
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+rainbow_fade_8_beats red
+
+# Flash red (7 bars)
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
+flash_1_beat red
