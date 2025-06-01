@@ -181,3 +181,23 @@ singing_part:
     beats: 0.125
   - value: black
     beats: 0.5
+
+
+### ------------ DORUKSEN SONG 1 -------------
+hold_then_fade_6_beats:
+  - value: color1
+    beats: 2
+  - fade:
+      from: color1
+      to: black
+    beats: 4
+quick_flash_1_beat:
+  - value: color1
+    beats: 0.4
+  - value: black
+    beats: 0.6
+flash_hold_long_1_beat:
+  - value: color1
+    beats: 0.6
+  - value: black
+    beats: 0.4

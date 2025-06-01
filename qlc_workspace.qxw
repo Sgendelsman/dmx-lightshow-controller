@@ -11,6 +11,9 @@
    <BeatGenerator BeatType="Disabled" BPM="0"/>
    <Universe Name="Universe 1" ID="0" Passthrough="True">
     <Input Plugin="ArtNet" UID="127.0.0.1" Line="1"/>
+    <Output Plugin="DMX USB" UID="FT232R USB UART (S/N: B003X4Y1)" Line="0">
+     <PluginParameters UniverseChannels="28"/>
+    </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1">
     <Input Plugin="ArtNet" UID="127.0.0.1" Line="1"/>
@@ -22,8 +25,28 @@
    <Manufacturer>UKing</Manufacturer>
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
+   <ID>0</ID>
+   <Name>Par 36 #3</Name>
+   <Universe>0</Universe>
+   <Address>14</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
+   <ID>1</ID>
+   <Name>Par 36 #4</Name>
+   <Universe>0</Universe>
+   <Address>21</Address>
+   <Channels>7</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>UKing</Manufacturer>
+   <Model>Par 36</Model>
+   <Mode>7 Channel</Mode>
    <ID>2</ID>
-   <Name>Par 36</Name>
+   <Name>Par 36 #1</Name>
    <Universe>0</Universe>
    <Address>0</Address>
    <Channels>7</Channels>
@@ -33,7 +56,7 @@
    <Model>Par 36</Model>
    <Mode>7 Channel</Mode>
    <ID>3</ID>
-   <Name>Par 36</Name>
+   <Name>Par 36 #2</Name>
    <Universe>0</Universe>
    <Address>7</Address>
    <Channels>7</Channels>
@@ -43,8 +66,10 @@
    <ChannelStyle>0</ChannelStyle>
    <ValueStyle>0</ValueStyle>
    <Grid Width="1" Height="3" Depth="1" Units="0"/>
-   <FxItem ID="2" XPos="179.012" YPos="380.658"/>
-   <FxItem ID="3" XPos="631.687" YPos="376.543"/>
+   <FxItem ID="0" XPos="700.74" YPos="671.559"/>
+   <FxItem ID="1" XPos="101.399" YPos="671.329"/>
+   <FxItem ID="2" XPos="224.467" YPos="149.889"/>
+   <FxItem ID="3" XPos="551.267" YPos="149.27"/>
   </Monitor>
  </Engine>
  <VirtualConsole>
