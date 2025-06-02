@@ -1,58 +1,58 @@
 # Bar swapping
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
 # Quick flashing
 flash_1_beat yellow
@@ -60,25 +60,25 @@ flash_1_beat yellow
 flash_1_beat yellow
 flash_1_beat yellow
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
+alternate_1_beat yellow_1 yellow_2
+alternate_1_beat yellow_3 yellow_4
 
 # Fade death
 hold_then_fade_6_beats yellow_strobe
