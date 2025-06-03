@@ -8,6 +8,7 @@ import yaml
 
 from utils.project_config import *
 import utils.artnet_utils as artnet_utils
+import utils.light_show_utils as light_show_utils
 
 def separate_generic_pattern_key(pattern_key):
     if ' ' in pattern_key:
@@ -66,7 +67,12 @@ def load_patterns():
 
 def load_channel_configs():
     with open(os.path.join(BEAT_DIRECTORY, 'helpers/channel_configs.json'), 'r') as f:
-        return json.load(f)
+        channel_configs = json.load(f)
+    for scene_key in channel_configs:
+        scene = channel_configs[scene_key]
+        for i in range(1, len(scene), 7):
+            scene[str(i)] = int(scene[str(i)] * (max(0, min(100, MAX_BRIGHTNESS)) / 100.0))
+    return channel_configs
 
 def load_placements(song_path, patterns):
     base = os.path.basename(song_path)
@@ -202,7 +208,7 @@ def main(song_path, song_duration, start_delay, start_offset, seek, start_time, 
                     # end = min(end, song_duration - seek)
                     t = (now - start) / (end - start) if start != end else 0
                     for ch in set(from_vals) | set(to_vals):
-                        frame[ch] = min(255, int(from_vals.get(ch, 0) + (to_vals.get(ch, 0) - from_vals.get(ch, 0)) * t))
+                        frame[ch] = light_show_utils.quadratic_fade(from_vals.get(ch, 0), to_vals.get(ch, 0), t)
                     if last_cue != cue:
                         print(f'[{(now + seek):.3f}s/{song_duration:.3f}s] DMX -> {key}')
                         last_cue = cue

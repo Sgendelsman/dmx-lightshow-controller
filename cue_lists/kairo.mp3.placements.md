@@ -107,10 +107,10 @@ singing_part purple
 singing_part dark_blue
 
 # Fading (just red)
-rainbow_fade_8_beats red
-rainbow_fade_8_beats red
-rainbow_fade_8_beats red
-rainbow_fade_8_beats red
+rainbow_fade_then_flash_8_beats red
+rainbow_fade_then_flash_8_beats red
+rainbow_fade_then_flash_8_beats red
+rainbow_fade_then_flash_8_beats red
 
 # Flash red (7 bars)
 flash_1_beat red

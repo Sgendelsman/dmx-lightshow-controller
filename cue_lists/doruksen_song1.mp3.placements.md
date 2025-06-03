@@ -1,58 +1,15 @@
 # Bar swapping
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
 
 # Quick flashing
 flash_1_beat yellow
@@ -60,25 +17,10 @@ flash_1_beat yellow
 flash_1_beat yellow
 flash_1_beat yellow
 
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
-alternate_1_beat yellow_1 yellow_2
-alternate_1_beat yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
+alternate_1_beat_4_times color_sequence yellow_1 yellow_2 yellow_3 yellow_4
 
 # Fade death
 hold_then_fade_6_beats yellow_strobe
@@ -87,45 +29,14 @@ blackout_4_beats
 blackout_4_beats
 
 # Quick flashing
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
 
 # Strobe flashing
 flash_hold_long_1_beat yellow_strobe
@@ -169,45 +80,14 @@ flash_hold_long_1_beat yellow_strobe
 flash_hold_long_1_beat yellow_strobe
 
 # Quick flashing (again)
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
+quick_flash_4_beats yellow
 
 # Strobe flashing (two colors)
 flash_hold_long_1_beat yellow_strobe

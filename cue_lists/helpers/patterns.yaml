@@ -128,6 +128,15 @@ rainbow_fade_8_beats:
       from: color1
       to: black
     beats: 1
+rainbow_fade_then_flash_8_beats:
+  - value: color1
+    beats: 1
+  - fade:
+      from: color1
+      to: black
+    beats: 5
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
 rainbow_run_1_beat:
   - value: color1
     beats: 1
@@ -152,7 +161,7 @@ pause_then_strobe:
     beats: 2
 singing_part:
   - value: black
-    beats: 1.875
+    beats: 1.5
   - value: color1
     beats: 0.25
   - value: black
@@ -188,7 +197,7 @@ singing_part:
   - value: color1
     beats: 0.125
   - value: black
-    beats: 0.625
+    beats: 1
 rainbow_run_sequence:
   - pattern: rainbow_run_1_beat color1
   - pattern: rainbow_run_1_beat color1
@@ -310,6 +319,7 @@ hold_rainbow_8_bars:
   - pattern: rainbow_run_1_beat color1
   - pattern: rainbow_run_1_beat color1
 
+
 ### ------------ DORUKSEN SONG 1 -------------
 hold_then_fade_6_beats:
   - value: color1
@@ -328,3 +338,13 @@ flash_hold_long_1_beat:
     beats: 0.6
   - value: black
     beats: 0.4
+alternate_1_beat_4_times:
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+quick_flash_4_beats:
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
