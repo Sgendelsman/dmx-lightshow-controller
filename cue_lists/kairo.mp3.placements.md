@@ -1,39 +1,8 @@
-# Flash red 8x4 beats
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
-flash_1_beat red
+# Flash red 4x8 beats
+flash_1_beat_8_times red
+flash_1_beat_8_times red
+flash_1_beat_8_times red
+flash_1_beat_8_times red
 
 # Flash red 2-1 beat (8 bars)
 flash_half_beats red
@@ -77,45 +46,10 @@ flash_half_beats red
 flash_1_beat red
 
 # Flash red 2x speed
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
-flash_half_beats red
+flash_half_beats_8_times red
+flash_half_beats_8_times red
+flash_half_beats_8_times red
+flash_half_beats_8_times red
 
 # Rainbow runs
 rainbow_fade_8_beats red
