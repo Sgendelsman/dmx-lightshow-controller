@@ -154,26 +154,26 @@ flash_half_beats white
 flash_half_beats white
 
 # Flash red and white
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-flash_red_and_white_2_beats
-flash_red_and_white_2_beats
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
 fade_to_black_4_beats red
 
