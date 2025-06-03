@@ -189,7 +189,126 @@ singing_part:
     beats: 0.125
   - value: black
     beats: 0.5
+rainbow_run_sequence:
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
 
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+flash_rainbow_8_bars:
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+hold_rainbow_8_bars:
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
 
 ### ------------ DORUKSEN SONG 1 -------------
 hold_then_fade_6_beats:

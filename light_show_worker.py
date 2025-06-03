@@ -109,7 +109,6 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
         if len(pattern_args) > 0 and 'color_sequence' in pattern_args[0]:
             color_sequence = True
             pattern_args = pattern_args[1:]
-            print(pattern_args)
             
         pattern = patterns.get(key, [])
 
