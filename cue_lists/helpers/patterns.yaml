@@ -72,41 +72,49 @@ fade_to_black_8_beats:
 
 
 ### ------------ UNBROKEN ------------
-flash_red:
-  - value: red
-    beats: 0.5
-  - value: black
-    beats: 0.5
-flash_white:
-  - value: white
-    beats: 0.5
-  - value: black
-    beats: 0.5
-flash_red_and_white_2_beats:
-  - pattern: flash_red
-  - pattern: flash_white
-fade_in_red_2_beats:
+flash_2_beats_2_colors:
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color2
+fade_in_2_beats:
   - fade:
       from: black
-      to: red
+      to: color1
     beats: 2
-fade_out_red_2_beats:
-  - value: red
+fade_out_2_beats:
+  - value: color1
     beats: 0.25
   - fade:
-      from: red
+      from: color1
       to: black
     beats: 1.75
 fade_in_fade_out_red_4_beats:
-  - pattern: fade_in_red_2_beats
-  - pattern: fade_out_red_2_beats
+  - pattern: fade_in_2_beats red
+  - pattern: fade_out_2_beats red
 hold_then_fade_out_red_4_beats:
   - value: red
     beats: 2
-  - pattern: fade_out_red_2_beats
+  - pattern: fade_out_2_beats red
 
 
 ### ------------ KAIRO ------------
+flash_1_beat_8_times:
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+flash_half_beats_8_times:
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
+  - pattern: flash_half_beats color1
 rainbow_fade_8_beats:
   - value: color1
     beats: 1
@@ -181,7 +189,126 @@ singing_part:
     beats: 0.125
   - value: black
     beats: 0.5
+rainbow_run_sequence:
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
 
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+  - pattern: rainbow_run_half_beats color1 color2
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+flash_rainbow_8_bars:
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+  - pattern: flash_1_beat color1
+hold_rainbow_8_bars:
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
+  - pattern: rainbow_run_1_beat color1
 
 ### ------------ DORUKSEN SONG 1 -------------
 hold_then_fade_6_beats:

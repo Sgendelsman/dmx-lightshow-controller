@@ -9,6 +9,13 @@ import yaml
 from utils.project_config import *
 import utils.artnet_utils as artnet_utils
 
+def separate_generic_pattern_key(pattern_key):
+    if ' ' in pattern_key:
+        args = pattern_key.split(' ')
+        return (args[0], args[1:])
+    else:
+        return (pattern_key, [])
+
 def load_beat_times(song_path):
     base = os.path.basename(song_path)
     manual_file = os.path.join(BEAT_DIRECTORY, base + '.manualbeats.json')
@@ -26,16 +33,29 @@ def load_patterns():
     def has_nested_patterns(patterns):
         return any('pattern' in val for pattern in patterns.values() for val in pattern)
     def expand_patterns(patterns):
-        for key in list(patterns.keys()):
+        for pattern_key in list(patterns.keys()):
             expanded = []
-            for val in patterns[key]:
+            for val in patterns[pattern_key]:
                 if 'pattern' in val:
-                    nested = val['pattern']
-                    if nested in patterns:
-                        expanded.extend(patterns[nested])
+                    (nested_key, pattern_args) = separate_generic_pattern_key(val['pattern'])
+                    if nested_key in patterns:
+                        new_pattern_steps = []
+                        for step in patterns[nested_key]:
+                            step_copy = step.copy()
+                            for i in range(len(pattern_args)):
+                                color_placeholder = f'color{i+1}'
+                                if 'value' in step_copy and color_placeholder in step_copy['value']:
+                                    step_copy['value'] = step_copy['value'].replace(color_placeholder, pattern_args[i])
+                                elif 'fade' in step_copy:
+                                    if 'from' in step_copy['fade'] and color_placeholder in step_copy['fade']['from']:
+                                        step_copy['fade']['from'] = step_copy['fade']['from'].replace(color_placeholder, pattern_args[i])
+                                    if 'to' in step_copy['fade'] and color_placeholder in step_copy['fade']['to']:
+                                        step_copy['fade']['to'] = step_copy['fade']['to'].replace(color_placeholder, pattern_args[i])
+                            new_pattern_steps.append(step_copy)
+                        expanded = expanded + new_pattern_steps
                 else:
                     expanded.append(val)
-            patterns[key] = expanded
+            patterns[pattern_key] = expanded
         return patterns
 
     with open(os.path.join(BEAT_DIRECTORY, 'helpers/patterns.yaml'), 'r') as f:
@@ -64,8 +84,7 @@ def load_placements(song_path, patterns):
                 pattern_key = line.strip('"')
             pattern_key = pattern_key.strip().strip('"')
             placements.append((last_index, pattern_key))
-            if ' ' in pattern_key:
-                pattern_key = pattern_key.split(' ')[0]
+            (pattern_key, _) = separate_generic_pattern_key(pattern_key)
             for step in patterns.get(pattern_key, []):
                 last_index += step.get('beats', 1)
     return placements
@@ -81,16 +100,20 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
     cues = []
     for index, key in placements:
         key = key.strip()
-        args = []
+        
         # If there are args in the placement key, pass them to the pattern
-        if ' ' in key:
-            args = key.split(' ')
-            key = args[0]
-            args = args[1:]
+        (key, pattern_args) = separate_generic_pattern_key(key)
 
+        # color_sequence will always be the first entry in the args if used
+        color_sequence = False
+        if len(pattern_args) > 0 and 'color_sequence' in pattern_args[0]:
+            color_sequence = True
+            pattern_args = pattern_args[1:]
+            
         pattern = patterns.get(key, [])
 
         offset = 0.0
+        color_sequence_index = 0
         for step in pattern:
             duration = step.get('beats', 1.0)
             start_i = index + offset
@@ -99,24 +122,36 @@ def resolve_cues(beat_times, placements, patterns, channel_configs):
             end = min(len(beat_times), beat_index_to_time(beat_times, end_i))
             if start == len(beat_times):
                 break
+            
             if 'fade' in step:
                 f = step['fade']
                 from_val, to_val = f['from'], f['to']
-                for i in range(len(args)):
+                for i in range(len(pattern_args)):
                     color_placeholder = f'color{i+1}'
-                    if color_placeholder in from_val:
-                        from_val = from_val.replace(color_placeholder, args[i])
-                    if color_placeholder in to_val:
-                        to_val = to_val.replace(color_placeholder, args[i])
+                    if color_sequence:
+                        color_to_use = pattern_args[color_sequence_index]
+                    else:
+                        color_to_use = pattern_args[i]
+                    if color_placeholder in from_val or 'seq_placeholder' in from_val:
+                        from_val = from_val.replace(color_placeholder, color_to_use)
+                        color_sequence_index = (color_sequence_index + 1) % len(pattern_args)
+                    if color_placeholder in to_val or 'seq_placeholder' in to_val:
+                        to_val = to_val.replace(color_placeholder, color_to_use)
+                        color_sequence_index = (color_sequence_index + 1) % len(pattern_args)
                 from_vals = channel_configs.get(from_val, {})
                 to_vals = channel_configs.get(to_val, {})
                 cues.append((start, end, from_vals, to_vals, key))
             elif 'value' in step:
                 val = step['value']
-                for i in range(len(args)):
+                for i in range(len(pattern_args)):
                     color_placeholder = f'color{i+1}'
-                    if color_placeholder in val:
-                        val = val.replace(color_placeholder, args[i])
+                    if color_sequence:
+                        color_to_use = pattern_args[color_sequence_index]
+                    else:
+                        color_to_use = pattern_args[i]
+                    if color_placeholder in val or 'seq_placeholder' in val:
+                        val = val.replace(color_placeholder, color_to_use)
+                        color_sequence_index = (color_sequence_index + 1) % len(pattern_args)
                 vals = channel_configs.get(val, {})
                 cues.append((start, end, vals, vals, key))
             offset += duration
