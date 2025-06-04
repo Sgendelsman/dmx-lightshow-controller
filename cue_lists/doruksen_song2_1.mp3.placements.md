@@ -1,4 +1,11 @@
-flash_1_beat red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
+fade_to_black_4_beats red
 flash_1_beat red
 flash_1_beat red
 flash_1_beat red
