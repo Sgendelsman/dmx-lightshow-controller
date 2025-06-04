@@ -1,253 +1,133 @@
 # Bar swapping
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
 
 # Quick flashing
-flash_1_beat yellow
-flash_1_beat yellow
-flash_1_beat yellow
-flash_1_beat yellow
+flash_1_beat dark_blue
+flash_1_beat dark_blue
+flash_1_beat dark_blue
+flash_1_beat dark_blue
 
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
-
-hold_1_beat yellow_1
-hold_1_beat yellow_2
-hold_1_beat yellow_3
-hold_1_beat yellow_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
+alternate_1_beat_4_times color_sequence dark_blue_1 dark_blue_2 dark_blue_3 dark_blue_4
 
 # Fade death
-hold_then_fade_6_beats yellow_strobe
+hold_then_fade_6_beats dark_blue_strobe
 blackout_2_beats
 blackout_4_beats
 blackout_4_beats
 
 # Quick flashing
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
 
 # Strobe flashing
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat dark_blue_strobe
 
 # Quick flashing (again)
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
-quick_flash_1_beat yellow
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
+quick_flash_4_beats dark_blue
 
 # Strobe flashing (two colors)
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
 
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
 
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-
-flash_hold_long_1_beat yellow_strobe
-flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
 
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
 
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
-flash_hold_long_1_beat yellow_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+
+flash_hold_long_1_beat dark_blue_strobe
+flash_hold_long_1_beat red_strobe
+flash_hold_long_1_beat dark_blue_strobe
 flash_hold_long_1_beat red_strobe
 
 hold_then_fade_6_beats red_strobe
