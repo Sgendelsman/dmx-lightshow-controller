@@ -1,0 +1,125 @@
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+
+hold_4_beats shrek_green_strobe
+
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
+flash_half_beats shrek_green
