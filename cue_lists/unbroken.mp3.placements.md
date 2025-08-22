@@ -83,25 +83,25 @@ flash_1_beat red
 fade_to_black_4_beats red
 
 # 4 bars white and red alternate solid (no flash)
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
-alternate_2_beats red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
+flash_2_beats_2_colors red white
 
 # 12 bars of breathing blue fade
 fade_in_fade_out_red_4_beats
