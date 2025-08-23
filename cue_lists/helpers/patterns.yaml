@@ -39,6 +39,9 @@ flash_quick_twice:
 hold_1_beat:
   - value: color1
     beats: 1
+hold_2_beats:
+  - value: color1
+    beats: 2
 alternate_half_beats:
   - value: color1
     beats: 0.25
@@ -366,6 +369,26 @@ offbeat_flash_at_start:
 blackout_3_beats:
   - value: black
     beats: 3
+light_swap_4_bars:
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
+  - pattern: alternate_1_beat color1 color2
 light_swap_8_bars:
   - pattern: alternate_1_beat color1 color2
   - pattern: alternate_1_beat color1 color2
@@ -446,12 +469,62 @@ light_swap_2x_speed_8_bars:
   - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
   - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
   - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+light_swap_2x_speed_3_bars:
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
+  - pattern: rainbow_run_quarter_beats color1 color2 color3 color4
 flash_quick_8_bars:
   - pattern: quick_flash_1_beat color1
   - pattern: quick_flash_1_beat color1
   - pattern: quick_flash_1_beat color1
   - pattern: quick_flash_1_beat color1
   
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+  - pattern: quick_flash_1_beat color1
+flash_quick_7_bars:
   - pattern: quick_flash_1_beat color1
   - pattern: quick_flash_1_beat color1
   - pattern: quick_flash_1_beat color1
@@ -536,3 +609,8 @@ strobe_fade_4_beats:
     beats: 2
   - value: black
     beats: 1 
+fade_2_beats:
+  - fade:
+      from: color1
+      to: black
+    beats: 2
